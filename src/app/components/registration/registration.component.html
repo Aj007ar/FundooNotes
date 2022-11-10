@@ -1,100 +1,91 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create your Fundoo account</title>
-  </head>
-  <body>
-    <div class="header-container">
-       <div class="form-container">
-        <!-- <div class="logo-field"> -->
-            <div class="logo">
-                <ul>
-                    <li class="f">F</li>
-                    <li class="u">u</li>
-                    <li class="n">n</li>
-                    <li class="d">d</li>
-                    <li class="o">o</li>
-                    <li class="o1">o</li>
-                </ul>
-            </div>
-            <div class="form-block">
-            <div class="header-name">
-                <h1>Create your Fundoo account</h1>
-            </div>
-            <div class="name-block">
-                <div class="fname">
-                <p>
-                    <mat-form-field appearance="outline">
-                      <mat-label>First Name</mat-label>
-                      <input matInput placeholder="FirstName">
-                    </mat-form-field>
-                  </p>
-                </div>
-                <div class="lname">
-                    <p>
-                        <mat-form-field appearance="outline">
-                          <mat-label>Last Name</mat-label>
-                          <input matInput placeholder="LastName">
-                        </mat-form-field>
-                      </p>
-                    </div>
-            </div>
-            <div class="email-container">
-                <!-- <div class="email"> -->
-                    <!-- <p> -->
-                        <mat-form-field class="email-field" appearance="outline">
-                          <mat-label>Email</mat-label>
-                          <input matInput placeholder="Enter Email">
-                          <mat-hint>You can use letters, Number & Periods</mat-hint>
-                        </mat-form-field>
-                    <!-- </p> -->
-                    <!-- </div> -->
-              </div>
-              <div class="mail-msg">
-              <h3><a href="#" class="link">Use my current email address instead</a></h3>
-            </div>
-        <div class="password-field">
-            <div class="pass">
-            <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Password">
-              </mat-form-field>
-            </div>
-            <div class="conf-pass">
+<div class="header-container">
+  <div class="form-container">
+    <div class="logo">
+      <ul>
+        <li class="f">F</li>
+        <li class="u">u</li>
+        <li class="n">n</li>
+        <li class="d">d</li>
+        <li class="o">o</li>
+        <li class="o1">o</li>
+      </ul>
+    </div>
+    <div class="form-block">
+      <div class="header-name">
+        <h1>Create your Fundoo account</h1>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="name-block">
+          <div class="fname">
+            <p>
               <mat-form-field appearance="outline">
-                <mat-label>Confirm</mat-label>
-                <input matInput placeholder="Re-enter Password">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="FirstName" type="text" formControlName="firstName" class="form-control">
+                <mat-hint>First letter should be capital</mat-hint>
+                <mat-error>Enter valid first name</mat-error>
               </mat-form-field>
-            </div>
+            </p>
+          </div>
+          <div class="lname">
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="LastName" type="text" formControlName="lastName" class="form-control">
+                <mat-hint>First letter should be capital</mat-hint>
+                <mat-error>Enter valid last name</mat-error>
+              </mat-form-field>
+            </p>
+          </div>
+        </div>
+        <div class="email-container">
+          <mat-form-field class="email-field" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Email" type="text" formControlName="email" class="form-control">
+            <mat-hint>Use letters , characters and numbers</mat-hint>
+            <mat-error>Enter valid email</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mail-msg">
+          <h3><a href="#" class="link">Use my current email address instead</a></h3>
+        </div>
+        <div class="password-field">
+          <div class="pass">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" type="password" formControlName="password" class="form-control">
+              <!-- <mat-hint>including atleast 1 uppercase,lowercase and special characters</mat-hint> -->
+              <mat-error>Enter valid password</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="conf-pass">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm</mat-label>
+              <input matInput placeholder="Re-enter Password" type="password" formControlName="confirmPassword" class="form-control">
+            </mat-form-field>
+          </div>
         </div>
         <div class="pass-msg">
-            <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
-          </div>
-          <div class="show-pass">
-            <input type="checkbox">
-             <label> Show Password</label><br>
-          </div>
-          <div class="submit-field">
-            <div class="sign-instead">
-                <h3><a href="#" class="link">Sign in instead</a></h3>
-            </div>
-            <div class="sign-field">
-                <a href="#" class="button">Next</a>
-            </div>
-          </div>
-    </div>
-</div>
-        <div class="logo-block">
-            <figure class="img1">
-                <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt width="244" height="244">
-                <figcaption class="caption">Taking Notes made easy</figcaption>
-            </figure>
+          <p>Use 8 or more characters including atleast 1 uppercase,lowercase and special characters</p>
         </div>
+        <div class="show-pass">
+          <input type="checkbox">
+          <label> Show Password</label><br>
+        </div>
+        <div class="submit-field">
+          <div class="sign-instead">
+            <h3><a routerLink="/signin" class="link">Sign in instead</a></h3>
+          </div>
+          <div class="sign-field">
+            <a class="button" (click)="onSubmit()">Next</a>
+          </div>
+        </div>
+      </form>
     </div>
-  </body>
-  </html>  
-
-  
+  </div>
+  <div class="logo-block">
+    <figure class="img1">
+      <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt width="244" height="244">
+      <figcaption class="caption">Taking Notes made easy</figcaption>
+    </figure>
+  </div>
+</div>

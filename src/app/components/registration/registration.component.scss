@@ -12,7 +12,7 @@ body{
     overflow: hidden;
     padding: 24px 24px 80px;
     border-radius: 5px;
-    margin-left: -16%;
+    margin-left: 25%;
     
     width: 50rem;
 }
@@ -111,7 +111,7 @@ body{
 .password-field{
     display: flex;
     margin: 0rem;
-    margin-bottom: -3rem;   
+    margin-bottom: -2rem;   
     margin-left: -3px;
 }
 .mat-form-field{
@@ -184,4 +184,20 @@ body{
     color: #1a73e8;
     text-decoration: none;
     cursor: pointer;
+}
+@media (max-width:800px) {
+    .header-container{
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container{
+        width: 100%;
+        height: auto;
+    }
+    .logo-block{
+        display: none;
+    }
 }

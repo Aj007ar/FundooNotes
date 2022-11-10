@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -7,21 +7,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  registerForm!: FormGroup;
+  submitted = false;
 
-  public getJsonValue:any;
-  public postJsonValue:any;
+  constructor(private formBuilder: FormBuilder) { }
 
-  constructor(private http:HttpClient) { 
-  
-  }
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.pattern("^[A-Z]{1}[A-Z a-z]{3,}$")]],
+      lastName: ['', [Validators.required, Validators.pattern("^[A-Z]{1}[A-Z a-z]{3,}$")]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Z a-z 0-9 +_.-]+@[A-z a-z 0-9 .-]+$")]],
+      password: ['', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+=-]).{8,}$")]],
+      confirmPassword: ['', Validators.required],
 
-  ngOnInit(): void {
-    this.createUser();
-  }
-  public createUser(){
-    this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe((data) => {
-      console.log(data);
-      this.getJsonValue = data;
     });
+  }
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.registerForm.valid) {
+      console.log("Form Submitted");
+    }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+  }
+}
+function MustMatch(password: string, confirmPassword: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[password];
+    const matchingControl = formGroup.controls[confirmPassword];
+
+    if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
+      // return if another validator has already found an error on the matchingControl
+      return;
+    }
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ mustMatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
   }
 }

@@ -18,18 +18,18 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-field">
             <div class="input-field">
-                <mat-form-field appearance="outline" type="text" formControlName="email" class="form-control">
+                <mat-form-field appearance="outline">
                     <mat-label>Email or phone</mat-label>
-                    <input matInput placeholder="Email or phone">
+                    <input matInput placeholder="Email or phone"  type="text" formControlName="email" class="form-control">
                 </mat-form-field>
             </div>
             <div class="forget-id">
                 <h3><a routerLink="#" class="link">Forget email?</a></h3>
             </div>
             <div class="pass-field">
-                <mat-form-field appearance="outline" type="password" formControlName="password" class="form-control">
+                <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" type="password" formControlName="password" class="form-control">
                 </mat-form-field>
             </div>
             <div class="forget-pass">

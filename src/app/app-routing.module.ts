@@ -8,6 +8,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 
 const routes: Routes = [
   {path:'signin', component:SigninComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'',redirectTo:"/signin",pathMatch:'full'},
   {path:'home', component:DashboardComponent,
   children:[
-    {path:'notes', component:CreateNoteComponent}
+    {path:'notes', component:GetAllNotesComponent}
   ]},
   
 ];

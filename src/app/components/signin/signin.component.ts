@@ -17,8 +17,8 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Z a-z 0-9 +_.-]+@[A-z a-z 0-9 .-]+$")]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+=-]).{8,}$")]],
-      service: ['advanced', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      service: ['advance', Validators.required]
     });
   }
   get f() { return this.loginForm.controls; }
@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
       let payload = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
-        service: this.loginForm.value.service
+        service: "advanve"
       }
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);

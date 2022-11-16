@@ -1,0 +1,29 @@
+.head{
+    display: flex;
+    flex-wrap: wrap;
+}
+.notes {
+    margin: 28px;
+    margin-left: 185px;
+    border: 1px solid;
+    border-color: white;
+    box-shadow: 1px 1px 3px 3px rgba(74, 77, 78, 0.22);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.notes:hover{
+    box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+}
+.title{
+    margin-left: 18px;
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: 400;
+   }
+ 
+   .description{
+      margin-left: 18px;
+      font-size: medium;
+   }

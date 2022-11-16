@@ -34,7 +34,8 @@ export class SigninComponent implements OnInit {
         service: this.loginForm.value.service
       }
       this.user.login(payload).subscribe((response: any) => {
-        console.log(response)
+        console.log(response);
+        localStorage.setItem('token',response.id)
       }
       )
     }

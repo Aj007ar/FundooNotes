@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 import { SigninComponent } from './components/signin/signin.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
@@ -13,10 +14,11 @@ const routes: Routes = [
   {path:'registration', component:RegistrationComponent},
   {path:'forget-password', component:ForgetPasswordComponent},
   {path:'reset-password', component:ResetPasswordComponent},
+  {path:'',redirectTo:"/signin",pathMatch:'full'},
   {path:'home', component:DashboardComponent,
   children:[
     {path:'notes', component:CreateNoteComponent}
-  ]}
+  ]},
   
 ];
 

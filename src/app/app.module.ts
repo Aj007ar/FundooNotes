@@ -23,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { DisplayNoteComponent } from './components/display-note/display-note.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { IconsComponent } from './components/icons/icons.component';
     ForgetPasswordComponent,
     DashboardComponent,
     CreateNoteComponent,
-    IconsComponent
+    IconsComponent,
+    GetAllNotesComponent,
+    DisplayNoteComponent
   ],
   imports: [
     BrowserModule,

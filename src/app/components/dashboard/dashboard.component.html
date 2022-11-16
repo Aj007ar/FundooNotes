@@ -57,7 +57,7 @@
             <mat-nav-list>
                 <div class="note" role="button" style="user-select: none;">
                     <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item routerLink="/dashboard/notes">Notes</a>
+                    <a mat-list-item routerLink="/home/notes">Notes</a>
                 </div>
                 <div class="rem">
                     <img src="../../../assets/Remind me.svg" alt="">
@@ -80,8 +80,7 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
-            <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
-            <app-create-note></app-create-note>
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

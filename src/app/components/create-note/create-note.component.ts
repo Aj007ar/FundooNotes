@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from '../../services/noteService/note.service';
 
 @Component({
   selector: 'app-create-note',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateNoteComponent implements OnInit {
 
-  description:any;
-  isShow=false;
-  title:any;
-  constructor() { }
+  title: any;
+  description: any;
+  isShow = false;
+
+  constructor(private note: NoteService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +20,17 @@ export class CreateNoteComponent implements OnInit {
   Show() {
     this.isShow = true;
   }
-  Close(){
-    this.isShow=false;
+  Close() {
+    this.isShow = false;
+    if ((this.title != null && this.title != "") || (this.description != null && this.description != "")) {
+      console.log(this.title, this.description)
+      let payload = {
+        "title": this.title,
+        "description": this.description
+      }
+      this.note.addNote(payload).subscribe((res: any) => {
+        console.log(res);
+      })
+    }
   }
 }

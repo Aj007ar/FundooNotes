@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/userService/user.service';
 export class SigninComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
+  users='1'
 
   constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
@@ -20,6 +21,7 @@ export class SigninComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: ['advance', Validators.required]
     });
+    localStorage.setItem('SeesionUser',this.users)
   }
   get f() { return this.loginForm.controls; }
 
@@ -31,7 +33,7 @@ export class SigninComponent implements OnInit {
       let payload = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
-        service: "advanve"
+        service: "advance"
       }
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);

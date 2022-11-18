@@ -13,6 +13,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu'
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -25,6 +26,7 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
+import { AuthGuardService } from './services/Auth-Guard/auth-guard.service';
 
 
 @NgModule({
@@ -49,9 +51,10 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
     ReactiveFormsModule,MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule,MatTooltipModule,MatSnackBarModule,
-    FormsModule
+    FormsModule,MatMenuModule
+    
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

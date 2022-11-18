@@ -1,12 +1,16 @@
 <div class="head">
     <div class="notes" *ngFor='let note of recieveNoteList'
-        style="width: 240px; border:1px solid black; min-height:fit-content; max-height:600px">
+        style="width: 300px; border:1px solid black; min-height:fit-content; max-height:600px">
+        <div tabindex="0" data-tooltip-text="Select note" aria-label="Select note" style="user-select: none;" class="select">
+        <img src="../../../assets/select.svg" alt=""></div>
         <div class="title">
             <p>{{note.title}}</p>
         </div>
         <div class="description">
             <p>{{note.description}}</p>
         </div>
-        <app-icons></app-icons>
+        <div class="icons">
+            <app-icons [noteCard]="note"></app-icons>
+        </div>
     </div>
 </div>

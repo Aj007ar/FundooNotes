@@ -27,4 +27,14 @@ export class IconsComponent implements OnInit {
     })
   }
 
+  archive(){
+    let payload={
+      noteIdList:[this.noteCard.id],
+      isArchived:true,
+    }
+    console.log(payload);
+    this.note.archiveNote(payload).subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
 }

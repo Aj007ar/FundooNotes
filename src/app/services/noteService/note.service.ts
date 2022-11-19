@@ -41,4 +41,42 @@ export class NoteService {
   }
   return this.httpService.postService("/notes/trashNotes", payload, true, header)
 }
+archiveNote(payload:any){
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token
+    })
+}
+return this.httpService.postService("/notes/archiveNotes", payload, true, header)
+}
+
+updateService(data:any){
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token
+    })
+}
+return this.httpService.postService("/notes/updateNotes", data, true, header)
+}
+
+getTrashNote(){
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token
+    })
+  }
+  return this.httpService.getService("/notes/getTrashNotesList", true, header)
+}
+getArchiveNote(){
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.token
+    })
+  }
+  return this.httpService.getService("/notes/getArchiveNotesList", true, header)
+}
 }

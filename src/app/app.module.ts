@@ -14,6 +14,7 @@ import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu'
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -27,6 +28,9 @@ import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
 import { AuthGuardService } from './services/Auth-Guard/auth-guard.service';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { AuthGuardService } from './services/Auth-Guard/auth-guard.service';
     CreateNoteComponent,
     IconsComponent,
     GetAllNotesComponent,
-    DisplayNoteComponent
+    DisplayNoteComponent,
+    UpdateNoteComponent,
+    TrashNoteComponent,
+    ArchiveNoteComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,8 @@ import { AuthGuardService } from './services/Auth-Guard/auth-guard.service';
     ReactiveFormsModule,MatIconModule,
     BrowserAnimationsModule,
     HttpClientModule,MatTooltipModule,MatSnackBarModule,
-    FormsModule,MatMenuModule
+    FormsModule,MatMenuModule,
+    MatDialogModule
     
   ],
   providers: [AuthGuardService],

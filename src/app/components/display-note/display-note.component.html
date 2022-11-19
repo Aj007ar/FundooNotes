@@ -3,10 +3,10 @@
         style="width: 300px; border:1px solid black; min-height:fit-content; max-height:600px">
         <div tabindex="0" data-tooltip-text="Select note" aria-label="Select note" style="user-select: none;" class="select">
         <img src="../../../assets/select.svg" alt=""></div>
-        <div class="title">
+        <div class="title" (click)="openDialog(note)">
             <p>{{note.title}}</p>
         </div>
-        <div class="description">
+        <div class="description" (click)="openDialog(note)">
             <p>{{note.description}}</p>
         </div>
         <div class="icons">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
 
@@ -13,7 +14,7 @@ export class SigninComponent implements OnInit {
   submitted = false;
   users='1'
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService, private router:Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -21,7 +22,7 @@ export class SigninComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: ['advance', Validators.required]
     });
-    localStorage.setItem('SeesionUser',this.users)
+    // localStorage.setItem('SeesionUser',this.users)
   }
   get f() { return this.loginForm.controls; }
 
@@ -38,6 +39,7 @@ export class SigninComponent implements OnInit {
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem('token',response.id)
+        this.router.navigateByUrl("/home/notes");
       }
       )
     }

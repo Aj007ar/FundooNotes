@@ -67,11 +67,11 @@
                     <img src="../../../assets/edit.svg" alt="">
                     <a mat-list-item routerLink=".">Edit labels</a>
                 </div>
-                <div class="arcv">
+                <div class="arcv" (click)="archive()">
                     <img src="../../../assets/archive.svg" alt="">
                     <a mat-list-item routerLink=".">Archive</a>
                 </div>
-                <div class="trash">
+                <div class="trash" (click)="trash()">
                     <img src="../../../assets/delete.svg" alt="">
                     <a mat-list-item routerLink=".">Trash</a>
                 </div>

@@ -10,6 +10,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { AuthenticationGuard } from './Guard/authentication.guard';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 
 const routes: Routes = [
   {path:'signin', component:SigninComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'',redirectTo:"/signin",pathMatch:'full'},
   {path:'home', component:DashboardComponent,canActivate:[AuthenticationGuard],
   children:[
-    {path:'notes', component:GetAllNotesComponent}
+    {path:'notes', component:GetAllNotesComponent},
+    {path:'trash', component:TrashNoteComponent},
+    {path:'archive', component:ArchiveNoteComponent}
   ]},
   
 ];

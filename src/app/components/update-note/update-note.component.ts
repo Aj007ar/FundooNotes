@@ -24,18 +24,24 @@ export class UpdateNoteComponent implements OnInit {
      }
 
   ngOnInit(): void {
+
   }
 
   closeDialog(){
     let data={
       title:this.title,
       description:this.description,
-      noteIdList:this.id
+      noteId:this.id
     }
     this.note.updateService(data).subscribe((response:any)=>{
       console.log("update response",response);
-      this.dialogRef.close(response);
+      
+      if(response.Success == true)
+          {
+            window.location.reload();
+          }
     })
+    this.dialogRef.close();
   }
-
 }
+

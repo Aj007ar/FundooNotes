@@ -9,6 +9,8 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class GetAllNotesComponent implements OnInit {
 
   NoteList=[]
+  isArchived=false
+  isTrash=false
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
@@ -20,6 +22,9 @@ export class GetAllNotesComponent implements OnInit {
       console.log(response);
       this.NoteList=response.data.data
       console.log(this.NoteList);
+      this.NoteList=this.NoteList.filter((result:any)=>{
+        return result.isArchived==false && result.isDeleted==false;
+      })
     })
   }
 }

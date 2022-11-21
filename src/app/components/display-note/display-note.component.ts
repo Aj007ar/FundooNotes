@@ -11,6 +11,8 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class DisplayNoteComponent implements OnInit {
 
   @Input() recieveNoteList: any;
+  title:any;
+  description:any;
   constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
@@ -21,12 +23,13 @@ export class DisplayNoteComponent implements OnInit {
     const dialogRef=this.dialog.open(UpdateNoteComponent,{
       width:'40%',
       height:'auto',
-      panelClass:"updateDialog",
       data:note,
 
     });
-    dialogRef.afterClosed().subscribe(result=>{
-      console.log('The dialog was closed',result);
+    dialogRef.afterClosed().subscribe(reponse=>{
+      this.title;
+      this.description;
+      console.log('The dialog was closed',reponse);
     })
   }
 }

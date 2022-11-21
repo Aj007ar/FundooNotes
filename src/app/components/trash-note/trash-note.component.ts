@@ -20,6 +20,9 @@ export class TrashNoteComponent implements OnInit {
       console.log(response);
       this.NoteList=response.data.data
       console.log(this.NoteList);
+      this.NoteList=this.NoteList.filter((result:any)=>{
+        return result.isArchived==false
+      })
     })
   }
 

@@ -20,6 +20,9 @@ export class ArchiveNoteComponent implements OnInit {
       console.log(response);
       this.noteList=response.data.data
       console.log(this.noteList);
+      this.noteList=this.noteList.filter((result:any)=>{
+        return result.isDeleted==false
+      })
     })
   }
 }

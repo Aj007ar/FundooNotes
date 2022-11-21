@@ -7,6 +7,26 @@
 .icon button{
     margin-right: 10px;
     border: none;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 }
+.colorboxSetting {
+    background-color: transparent;
+    border-radius: 20px;
+    margin: auto;
+    border: 0px solid;
+}
+
+.bg-color button {
+    height: 30px;
+    width: 30px;
+    display: block;
+    border-radius: 100px;
+}
+
+button:hover {
+    background-color: rgb(212, 128, 32);
+}
+// .unArchive{
+//     display: none;
+// }

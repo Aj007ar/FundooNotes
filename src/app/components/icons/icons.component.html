@@ -5,20 +5,38 @@
     <div class="icon">
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
     </div>
+
     <div class="icon">
-        <button mat-icon-button matTooltip="BackroundColor"> <img src="../../../assets/backColor.svg"></button>
+
+        <button mat-icon-button matTooltip="BackroundColor" mat-button [matMenuTriggerFor]="color"> <img
+                src="../../../assets/backColor.svg"></button>
+        <mat-menu #color="matMenu">
+            <div class="bg-color" *ngFor="let color of colors">
+                <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
+                    [style.background]="color?.code" (click)="colorChange(color.code)"></button>
+            </div>
+        </mat-menu>
     </div>
+
     <div class="icon">
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
+        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img
+                src="../../../assets/archive.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt=""></button>
+        <button mat-icon-button matTooltip="unarchive" (click)="unarchive()"> <img
+                src="../../../assets/unarchive.svg"></button>
+    </div>
+    <div class="icon">
+        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img
+                src="../../../assets/more.svg" alt=""></button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="trash()">Delete</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
+            <button mat-menu-item>Add label</button>
+            <button mat-menu-item>Add drawing</button>
+            <button mat-menu-item>make a copy</button>
+        </mat-menu>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="icon-container">
+<div class="icon-container" *ngIf="this.noteCard.isDeleted==false">
     <div class="icon">
         <button mat-icon-button matTooltip="Reminder"> <img src="../../../assets/remind.svg"></button>
     </div>
@@ -10,10 +10,10 @@
 
         <button mat-icon-button matTooltip="BackroundColor" mat-button [matMenuTriggerFor]="color"> <img
                 src="../../../assets/backColor.svg"></button>
-        <mat-menu #color="matMenu">
+        <mat-menu #color="matMenu" fxLayout="row">
             <div class="bg-color" *ngFor="let color of colors">
-                <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name"
-                    [style.background]="color?.code" (click)="colorChange(color.code)"></button>
+                <button mat-raised-button [matTooltip]="color.name" [style.background]="color.code"
+                    (click)="colorChange(color.code)"></button>
             </div>
         </mat-menu>
     </div>
@@ -21,11 +21,11 @@
     <div class="icon">
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div>
-    <div class="icon">
+    <div class="icon" *ngIf="this.noteCard.isArchived==false">
         <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img
                 src="../../../assets/archive.svg"></button>
     </div>
-    <div class="icon">
+    <div class="icon" *ngIf="isArchived==true">
         <button mat-icon-button matTooltip="unarchive" (click)="unarchive()"> <img
                 src="../../../assets/unarchive.svg"></button>
     </div>
@@ -39,4 +39,9 @@
             <button mat-menu-item>make a copy</button>
         </mat-menu>
     </div>
+</div>
+<div class="restore" *ngIf="this.noteCard.isDeleted==true">
+    <button mat-icon-button matTooltip="Restore" (click)="restore()"> <img src="../../../assets/Restore.svg"></button>
+    <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
+            src="../../../assets/delete-permenent.svg"></button>
 </div>

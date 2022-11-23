@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class TrashNoteComponent implements OnInit {
 
   NoteList=[]
+  
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
@@ -25,5 +26,7 @@ export class TrashNoteComponent implements OnInit {
       })
     })
   }
-
+  updateEvent($event:any){
+    this.getTrashNote();
+  }
 }

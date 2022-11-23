@@ -31,6 +31,7 @@ import { AuthGuardService } from './services/Auth-Guard/auth-guard.service';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { FilterPipe } from './Pipe/filter.pipe';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
     UpdateNoteComponent,
     TrashNoteComponent,
     ArchiveNoteComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

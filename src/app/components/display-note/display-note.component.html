@@ -1,5 +1,5 @@
 <div class="head">
-    <div class="notes" *ngFor='let data of recieveNoteList' [style.background]="data.color">
+    <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color">
         <div class="title">
             <p (click)="openDialog(data)">{{data.title}}</p>
         </div>
@@ -7,7 +7,7 @@
             <p (click)="openDialog(data)">{{data.description}}</p>
         </div>
         <div class="icons">
-            <app-icons [noteCard]="data"></app-icons>
+            <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
         </div>
     </div>
 </div>

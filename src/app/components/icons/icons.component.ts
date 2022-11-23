@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -8,9 +8,10 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 })
 export class IconsComponent implements OnInit {
 
-  
   @Input() noteCard:any;
-
+  @Output() IconEvent = new EventEmitter<string>();
+  isArchived=false
+  
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
@@ -39,7 +40,7 @@ export class IconsComponent implements OnInit {
     }
     console.log(payload);
     this.note.trashNote(payload).subscribe((res:any)=>{
-      console.log(res);
+      this.IconEvent.emit(res)
     })
   }
 
@@ -50,7 +51,7 @@ export class IconsComponent implements OnInit {
     }
     console.log(payload);
     this.note.archiveNote(payload).subscribe((res:any)=>{
-      console.log(res);
+      this.IconEvent.emit(res)
     })
   }
 
@@ -63,17 +64,36 @@ export class IconsComponent implements OnInit {
     }
     console.log(payload);
     this.note.colorService(payload).subscribe((res:any)=>{
-      console.log(res);
+      this.IconEvent.emit(res)
     })
   }
   unarchive(){
     let payload={
       noteIdList:[this.noteCard.id],
-      isArchived:false,
+      isArchived: false,
     }
     console.log(payload);
     this.note.archiveNote(payload).subscribe((res:any)=>{
-      console.log(res);
+      this.IconEvent.emit(res)
+    })
+  }
+
+  restore(){
+    let payload={
+      noteIdList:[this.noteCard.id],
+      isDeleted:false,
+    }
+    console.log(payload);
+    this.note.trashNote(payload).subscribe((res:any)=>{
+      this.IconEvent.emit(res)
+    })
+  }
+  delete(noteIdList:any){
+    let payload={
+      noteIdList:[this.noteCard.id],
+    }
+    this.note.deleteForever(payload).subscribe((res:any)=>{
+      this.IconEvent.emit(res)
     })
   }
 }

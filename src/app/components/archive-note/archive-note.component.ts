@@ -25,4 +25,7 @@ export class ArchiveNoteComponent implements OnInit {
       })
     })
   }
+  updateEvent($event:any){
+    this.getArchiveNote();
+  }
 }

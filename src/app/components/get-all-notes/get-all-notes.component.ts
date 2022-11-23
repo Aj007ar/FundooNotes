@@ -27,4 +27,7 @@ export class GetAllNotesComponent implements OnInit {
       })
     })
   }
+  updateEvent($event:any){
+    this.getAllNote();
+  }
 }

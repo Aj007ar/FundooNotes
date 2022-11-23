@@ -18,11 +18,8 @@
             </div>
             <div class="srch">
                 <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                    role="combobox" aria-hidden="false">
+                    role="combobox" aria-hidden="false" (keyup)="searchNote($event)">
             </div>
-            <!-- <div class="s-btn" type="button">
-                <img src="../../../assets/Clear Search.svg" alt="">
-            </div> -->
         </div>
         <div class="btn-container">
             <div role="button" data-tooltip-text="Refresh" aria-label="Refresh" style="user-select: none;"

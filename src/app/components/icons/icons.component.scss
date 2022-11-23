@@ -10,12 +10,12 @@
     background-color: transparent;
     cursor: pointer;
 }
-.colorboxSetting {
-    background-color: transparent;
-    border-radius: 20px;
-    margin: auto;
-    border: 0px solid;
-}
+// .colorboxSetting {
+//     background-color: transparent;
+//     border-radius: 20px;
+//     margin: auto;
+//     border: 0px solid;
+// }
 
 .bg-color button {
     height: 30px;
@@ -30,3 +30,16 @@ button:hover {
 // .unArchive{
 //     display: none;
 // }
+.restore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1px;
+    margin-left: 250px;
+}
+.restore button{
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

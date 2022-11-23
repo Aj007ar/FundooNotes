@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteService } from '../../services/noteService/note.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class CreateNoteComponent implements OnInit {
   title: any;
   description: any;
   isShow = false;
-
+  @Output() IconEvent = new EventEmitter<string>();
   constructor(private note: NoteService) { }
 
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class CreateNoteComponent implements OnInit {
       }
       this.note.addNote(payload).subscribe((res: any) => {
         console.log(res);
+        this.IconEvent.emit(res)
       })
     }
   }

@@ -1,6 +1,7 @@
 import { AUTO_STYLE } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { DataService } from 'src/app/services/DataServices/data.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -11,12 +12,18 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class DisplayNoteComponent implements OnInit {
 
   @Input() recieveNoteList: any;
+  @Output() eventForDisplay = new EventEmitter<string>();
   title:any;
   description:any;
-  constructor(public dialog:MatDialog) { }
+  message:any;
+  Search='';
+  constructor(public dialog:MatDialog, private dataServices:DataService) { }
 
   ngOnInit(): void {
-
+    this.dataServices.currentMessage.subscribe((res:any)=>{
+      console.log(res)
+      this.Search=res;
+    })
     console.log(this.recieveNoteList);
   }
   openDialog(note:any){
@@ -32,4 +39,13 @@ export class DisplayNoteComponent implements OnInit {
       console.log('The dialog was closed',reponse);
     })
   }
+
+  recievedEventFromIcon($event:any){
+    console.log("event from icon to disply",$event);
+    this.message=$event;
+    console.log("message",this.message);
+    this.eventForDisplay.emit(this.message)
+  }
+
+
 }

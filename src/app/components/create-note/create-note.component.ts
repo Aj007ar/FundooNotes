@@ -11,7 +11,7 @@ export class CreateNoteComponent implements OnInit {
   title: any;
   description: any;
   isShow = false;
-  @Output() IconEvent = new EventEmitter<string>();
+  @Output() CreateEvent = new EventEmitter<string>();
   constructor(private note: NoteService) { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class CreateNoteComponent implements OnInit {
       }
       this.note.addNote(payload).subscribe((res: any) => {
         console.log(res);
-        this.IconEvent.emit(res)
+        this.CreateEvent.emit(res)
       })
     }
   }

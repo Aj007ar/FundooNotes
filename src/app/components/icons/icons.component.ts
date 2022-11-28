@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -10,11 +12,14 @@ export class IconsComponent implements OnInit {
 
   @Input() noteCard:any;
   @Output() IconEvent = new EventEmitter<string>();
-  isArchived=false
+  isArchive=false;
+  isDelete=false;
   
-  constructor(private note:NoteService) { }
+  constructor(private note:NoteService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.isArchive=this.noteCard.isArchived;
+    this.isDelete=this.noteCard.isDeleted;
   }
 
   colors: Array<any> = [
@@ -94,6 +99,18 @@ export class IconsComponent implements OnInit {
     }
     this.note.deleteForever(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+    })
+  }
+
+  openDialog(data:any){
+    const dialogRef=this.dialog.open(CollaboratorComponent,{
+      width:'40%',
+      height:'auto',
+      data:this.noteCard,
+
+    });
+    dialogRef.afterClosed().subscribe(reponse=>{
+      console.log('The dialog was closed',reponse);
     })
   }
 }

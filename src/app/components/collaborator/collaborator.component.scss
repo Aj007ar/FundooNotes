@@ -1,0 +1,15 @@
+.heading{
+    margin-top: -31px;
+    border-bottom: groove;
+}
+.btn{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 60px;
+}
+.btn button{
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

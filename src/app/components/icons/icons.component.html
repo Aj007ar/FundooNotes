@@ -1,19 +1,21 @@
-<div class="icon-container" *ngIf="this.noteCard.isDeleted==false">
+<div class="icon-container" *ngIf="!isDelete">
     <div class="icon">
         <button mat-icon-button matTooltip="Reminder"> <img src="../../../assets/remind.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
+        <button mat-icon-button matTooltip="Collaborator" (click)="openDialog(noteCard)"> <img src="../../../assets/collaborator.svg"></button>
     </div>
 
     <div class="icon">
 
         <button mat-icon-button matTooltip="BackroundColor" mat-button [matMenuTriggerFor]="color"> <img
                 src="../../../assets/backColor.svg"></button>
-        <mat-menu #color="matMenu" fxLayout="row">
-            <div class="bg-color" *ngFor="let color of colors">
-                <button mat-raised-button [matTooltip]="color.name" [style.background]="color.code"
-                    (click)="colorChange(color.code)"></button>
+        <mat-menu #color="matMenu">
+            <div fxLayout="row wrap" style="padding-left: 8px;" fxLayout="row" fxLayoutAlign="none" class="bg">
+                <div class="bg-color" *ngFor="let color of colors">
+                    <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name" [style.background]="color.code"
+                        (click)="colorChange(color.code)"></button>
+                </div>
             </div>
         </mat-menu>
     </div>
@@ -21,11 +23,11 @@
     <div class="icon">
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div>
-    <div class="icon" *ngIf="this.noteCard.isArchived==false">
+    <div class="icon" *ngIf="!isArchive">
         <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img
                 src="../../../assets/archive.svg"></button>
     </div>
-    <div class="icon" *ngIf="isArchived==true">
+    <div class="icon" *ngIf="isArchive">
         <button mat-icon-button matTooltip="unarchive" (click)="unarchive()"> <img
                 src="../../../assets/unarchive.svg"></button>
     </div>
@@ -40,7 +42,7 @@
         </mat-menu>
     </div>
 </div>
-<div class="restore" *ngIf="this.noteCard.isDeleted==true">
+<div class="restore" *ngIf="isDelete">
     <button mat-icon-button matTooltip="Restore" (click)="restore()"> <img src="../../../assets/Restore.svg"></button>
     <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
             src="../../../assets/delete-permenent.svg"></button>

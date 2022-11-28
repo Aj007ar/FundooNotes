@@ -100,4 +100,14 @@ deleteForever(payload:any)
     }
     return this.httpService.postService("/notes/deleteForeverNotes",payload, true, header)
   }
+  addCollab(id:any,data:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/{id}/AddcollaboratorsNotes", data, true, header)
+  }
 }

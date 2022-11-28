@@ -10,12 +10,6 @@
     background-color: transparent;
     cursor: pointer;
 }
-// .colorboxSetting {
-//     background-color: transparent;
-//     border-radius: 20px;
-//     margin: auto;
-//     border: 0px solid;
-// }
 
 .bg-color button {
     height: 30px;
@@ -27,9 +21,6 @@
 button:hover {
     background-color: rgb(212, 128, 32);
 }
-// .unArchive{
-//     display: none;
-// }
 .restore{
     display: flex;
     flex-direction: row;
@@ -42,4 +33,16 @@ button:hover {
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+.bg{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 150px;
+    padding: 10px 10px 5px 5px;
+}
+.colorboxSetting {
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 2px;
+    border: 0px solid;
 }

@@ -52,25 +52,27 @@
             fixedTopGap="56">
 
             <mat-nav-list>
-                <div class="note" role="button" style="user-select: none;">
-                    <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item routerLink="/home/notes">Notes</a>
-                </div>
-                <div class="rem">
-                    <img src="../../../assets/Remind me.svg" alt="">
-                    <a mat-list-item routerLink="">Reminders</a>
-                </div>
-                <div class="label">
-                    <img src="../../../assets/edit.svg" alt="">
-                    <a mat-list-item routerLink=".">Edit labels</a>
-                </div>
-                <div class="arcv" (click)="archive()">
-                    <img src="../../../assets/archive.svg" alt="">
-                    <a mat-list-item routerLink=".">Archive</a>
-                </div>
-                <div class="trash" (click)="trash()">
-                    <img src="../../../assets/delete.svg" alt="">
-                    <a mat-list-item routerLink=".">Trash</a>
+                <div class="sidenav">
+                    <div class="note" role="button">
+                        <img src="../../../assets/lightbulb.svg" alt="">
+                        <a mat-list-item routerLink="/home/notes">Notes</a>
+                    </div>
+                    <div class="rem" role="button">
+                        <img src="../../../assets/Remind me.svg" alt="">
+                        <a mat-list-item routerLink="">Reminders</a>
+                    </div>
+                    <div class="label" role="button">
+                        <img src="../../../assets/edit.svg" alt="">
+                        <a mat-list-item routerLink=".">Edit labels</a>
+                    </div>
+                    <div class="arcv" (click)="archive()" role="button">
+                        <img src="../../../assets/archive.svg" alt="">
+                        <a mat-list-item routerLink=".">Archive</a>
+                    </div>
+                    <div class="trash" (click)="trash()" role="button">
+                        <img src="../../../assets/delete.svg" alt="">
+                        <a mat-list-item routerLink=".">Trash</a>
+                    </div>
                 </div>
             </mat-nav-list>
 

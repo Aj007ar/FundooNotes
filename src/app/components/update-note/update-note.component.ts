@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -12,6 +12,9 @@ export class UpdateNoteComponent implements OnInit {
   title:any;
   description:any;
   id:any;
+  message:any;
+  // @Input() noteCard:any;
+  @Output() IconEvent = new EventEmitter<string>();
   @Output() UpdateEvent = new EventEmitter<string>();
   constructor(private note:NoteService,public dialogRef:MatDialogRef<UpdateNoteComponent>,
    @Inject(MAT_DIALOG_DATA) public data:any) {
@@ -28,6 +31,7 @@ export class UpdateNoteComponent implements OnInit {
 
   }
 
+
   closeDialog(){
     let data={
       title:this.title,
@@ -39,6 +43,13 @@ export class UpdateNoteComponent implements OnInit {
       this.UpdateEvent.emit(response)
     })
     this.dialogRef.close();
+  }
+
+  recievedEventFromIcon($event:any){
+    console.log("event from icon to disply",$event);
+    this.message=$event;
+    console.log("message",this.message);
+    this.IconEvent.emit(this.message)
   }
 }
 

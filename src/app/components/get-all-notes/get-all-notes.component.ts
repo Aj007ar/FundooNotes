@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class GetAllNotesComponent implements OnInit {
 
   NoteList=[]
+  gridlist:any
   isArchived=false
   isTrash=false
   constructor(private note:NoteService) { }
@@ -24,7 +25,9 @@ export class GetAllNotesComponent implements OnInit {
       console.log(this.NoteList);
       this.NoteList=this.NoteList.filter((result:any)=>{
         return result.isArchived==false && result.isDeleted==false;
+
       })
+      this.NoteList=this.NoteList.reverse();
     })
   }
   updateEvent($event:any){

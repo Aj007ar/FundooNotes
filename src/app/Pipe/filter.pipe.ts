@@ -7,7 +7,7 @@ export class FilterPipe implements PipeTransform {
 
   transform(value: any,args: any) {
     console.log(args)
-    if(args=="All notes"){
+    if(args =="All notes"){
       return value
     }else{
       args=args.toLowerCase();

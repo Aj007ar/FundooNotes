@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from '../../services/noteService/note.service';
 
 @Component({
@@ -11,8 +12,11 @@ export class CreateNoteComponent implements OnInit {
   title: any;
   description: any;
   isShow = false;
+  message:any;
+  // @Input() noteCard:any;
+  @Output() IconEvent = new EventEmitter<string>();
   @Output() CreateEvent = new EventEmitter<string>();
-  constructor(private note: NoteService) { }
+  constructor(private note: NoteService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -33,5 +37,15 @@ export class CreateNoteComponent implements OnInit {
         this.CreateEvent.emit(res)
       })
     }
+  }
+
+  recievedEventFromIcon($event:any){
+    console.log("event from icon to disply",$event);
+    this.message=$event;
+    console.log("message",this.message);
+    this.IconEvent.emit(this.message)
+  }
+  openSnackbar(message: any, action: any) {
+    this.snackbar.open(message, action)
   }
 }

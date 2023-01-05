@@ -1,6 +1,7 @@
 .head {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .notes {
@@ -12,7 +13,7 @@
     // border-radius: 12px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: transparent;
     margin: 6px auto;
     margin-bottom: 30px;
     margin-left: 4px;
@@ -31,12 +32,14 @@
     width: 289px;
     border: none;
     outline: none;
+    background: transparent;
     font: normal 18px Google Sans, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .description {
     margin-left: -3px;
     font-size: medium;
+    background: transparent;
     width: 100%;
     margin-bottom: 26px;
     border: none;
@@ -46,8 +49,8 @@
 .icons {
     display: flex;
     font-size: large;
-    background-color: white;
-    border:0px white;
+    background-color: transparent;
+    border:0px transparent;
     margin-right: 40px;
     padding-top:15px;
     justify-content: space-between;
@@ -55,6 +58,7 @@
 }
 .clz{
     border: none;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 }
+

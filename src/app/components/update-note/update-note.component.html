@@ -1,9 +1,9 @@
-<div class="head">
+<div class="head" [style.background]="data.color" (UpdateEvent)="recievedEventFromIcon($event)">
     <div class="notes">
         <input class="title" [(ngModel)]="title">
         <input class="description" [(ngModel)]="description">
         <div class="icons">
-            <app-icons></app-icons>
+            <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
             <button (click)="closeDialog()" class="clz">Close</button>
         </div>
     </div>

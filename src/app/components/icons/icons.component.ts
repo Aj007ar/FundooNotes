@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icons',
@@ -15,7 +16,7 @@ export class IconsComponent implements OnInit {
   isArchive=false;
   isDelete=false;
   
-  constructor(private note:NoteService,public dialog:MatDialog) { }
+  constructor(private note:NoteService,public dialog:MatDialog,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.isArchive=this.noteCard.isArchived;
@@ -37,7 +38,9 @@ export class IconsComponent implements OnInit {
     { code: '#e8eaed', name: 'grey' },
   ];
 
-
+  openSnackbar(message: any, action: any) {
+    this.snackbar.open(message, action)
+  }
   trash(){
     let payload={
       noteIdList:[this.noteCard.id],

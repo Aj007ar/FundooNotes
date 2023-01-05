@@ -17,6 +17,7 @@ export class DisplayNoteComponent implements OnInit {
   description:any;
   message:any;
   Search='';
+  gridlist: any;
   constructor(public dialog:MatDialog, private dataServices:DataService) { }
 
   ngOnInit(): void {

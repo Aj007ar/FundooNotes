@@ -24,18 +24,18 @@
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/AddImage.svg"></button>
     </div>
     <div class="icon" *ngIf="!isArchive">
-        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img
+        <button mat-icon-button matTooltip="Archive" (click)="archive()" (click)="openSnackbar('Note is Archived','Dismiss')"> <img
                 src="../../../assets/archive.svg"></button>
     </div>
     <div class="icon" *ngIf="isArchive">
-        <button mat-icon-button matTooltip="unarchive" (click)="unarchive()"> <img
+        <button mat-icon-button matTooltip="unarchive" (click)="unarchive()" (click)="openSnackbar('Note is unArchived','Dismiss')"> <img
                 src="../../../assets/unarchive.svg"></button>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img
                 src="../../../assets/more.svg" alt=""></button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="trash()">Delete</button>
+            <button mat-menu-item (click)="trash()" (click)="openSnackbar('Note is in trash','Dismis')">Delete</button>
             <button mat-menu-item>Add label</button>
             <button mat-menu-item>Add drawing</button>
             <button mat-menu-item>make a copy</button>
@@ -43,7 +43,7 @@
     </div>
 </div>
 <div class="restore" *ngIf="isDelete">
-    <button mat-icon-button matTooltip="Restore" (click)="restore()"> <img src="../../../assets/Restore.svg"></button>
-    <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)"> <img
+    <button mat-icon-button matTooltip="Restore" (click)="restore()" (click)="openSnackbar('Note is Restored','Dismis')"> <img src="../../../assets/Restore.svg"></button>
+    <button mat-icon-button matTooltip="Delete" (click)="delete(this.noteCard.id)" (click)="openSnackbar('Note deleted permenently','Dismis')"> <img
             src="../../../assets/delete-permenent.svg"></button>
 </div>

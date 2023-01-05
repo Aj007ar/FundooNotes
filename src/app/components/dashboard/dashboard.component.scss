@@ -129,6 +129,21 @@
 // .sidenav .note{
 //   background-color: #feefc3;
 // }
+.gridview{
+  border: 0px;
+  background-color: transparent;
+  padding-left: 20px;
+  // padding-top: 18px;
+  opacity:0.7;
+}
+
+.listview{
+  border: 0px;
+  background-color: transparent;
+  // padding-top: 18px;
+  padding-left: 20px;
+  opacity:0.7;
+}
 @media (max-width: 1000px) {
   .example-container{
 

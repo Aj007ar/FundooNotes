@@ -8,17 +8,23 @@ import { NoteService } from '../../services/noteService/note.service';
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
-
+  data: any;
   title: any;
   description: any;
+  color: any;
   isShow = false;
-  message:any;
-  // @Input() noteCard:any;
+  message: any;
+  @Input() noteCard: any;
   @Output() IconEvent = new EventEmitter<string>();
   @Output() CreateEvent = new EventEmitter<string>();
-  constructor(private note: NoteService,private snackbar:MatSnackBar) { }
+  constructor(private note: NoteService, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.data = {
+      title: this.title,
+      description: this.description,
+      color: this.color
+    }
   }
 
   Show() {
@@ -30,19 +36,29 @@ export class CreateNoteComponent implements OnInit {
       console.log(this.title, this.description)
       let payload = {
         "title": this.title,
-        "description": this.description
+        "description": this.description,
+        "color": this.color,
       }
       this.note.addNote(payload).subscribe((res: any) => {
         console.log(res);
         this.CreateEvent.emit(res)
+        this.title = "",
+          this.description = "";
+        this.color = "";
+
+        this.snackbar.open('Note Created successfully', '', {
+          duration: 3000,
+          verticalPosition: 'bottom'
+        })
       })
+
     }
   }
 
-  recievedEventFromIcon($event:any){
-    console.log("event from icon to disply",$event);
-    this.message=$event;
-    console.log("message",this.message);
+  recievedEventFromIcon($event: any) {
+    console.log("event from icon to disply", $event);
+    this.message = $event;
+    console.log("message", this.message);
     this.IconEvent.emit(this.message)
   }
   openSnackbar(message: any, action: any) {

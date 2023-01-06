@@ -15,7 +15,8 @@ export class IconsComponent implements OnInit {
   @Output() IconEvent = new EventEmitter<string>();
   isArchive=false;
   isDelete=false;
-  
+  isArchived:any;
+  isDeleted:any;
   constructor(private note:NoteService,public dialog:MatDialog,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
@@ -37,10 +38,6 @@ export class IconsComponent implements OnInit {
     { code: '#e6c9a8', name: 'brown' },
     { code: '#e8eaed', name: 'grey' },
   ];
-
-  openSnackbar(message: any, action: any) {
-    this.snackbar.open(message, action)
-  }
   trash(){
     let payload={
       noteIdList:[this.noteCard.id],
@@ -49,6 +46,11 @@ export class IconsComponent implements OnInit {
     console.log(payload);
     this.note.trashNote(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note deleted successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 
@@ -60,6 +62,11 @@ export class IconsComponent implements OnInit {
     console.log(payload);
     this.note.archiveNote(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note Archived successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 
@@ -73,6 +80,11 @@ export class IconsComponent implements OnInit {
     console.log(payload);
     this.note.colorService(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note background updated successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
   unarchive(){
@@ -83,6 +95,11 @@ export class IconsComponent implements OnInit {
     console.log(payload);
     this.note.archiveNote(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note Unarchived successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 
@@ -94,6 +111,11 @@ export class IconsComponent implements OnInit {
     console.log(payload);
     this.note.trashNote(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note Restored successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
   delete(noteIdList:any){
@@ -102,6 +124,11 @@ export class IconsComponent implements OnInit {
     }
     this.note.deleteForever(payload).subscribe((res:any)=>{
       this.IconEvent.emit(res)
+
+      this.snackbar.open('Note deleted permenently', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 
@@ -114,6 +141,11 @@ export class IconsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(reponse=>{
       console.log('The dialog was closed',reponse);
+
+      this.snackbar.open('Note Collaborator Added successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 }

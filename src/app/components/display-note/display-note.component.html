@@ -1,5 +1,5 @@
 <div class="head">
-    <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color"  (UpdateEvent)="recievedEventFromIcon($event)">
+    <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color" [class.gridToList]="gridlist"  (UpdateEvent)="recievedEventFromIcon($event)">
         <div class="title">
             <p (click)="openDialog(data)">{{data.title}}</p>
         </div>

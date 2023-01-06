@@ -12,7 +12,8 @@ import { DataService } from 'src/app/services/DataServices/data.service';
 export class DashboardComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
-
+  grid = false;
+  formatGridList = false;
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from(
@@ -51,5 +52,28 @@ export class DashboardComponent implements OnInit {
 
   searchNote(event:any){
     this.dataService.sendMessage(event.target.value)
+  }
+
+  FormatView() {
+    if (this.formatGridList == false) {
+      this.formatGridList = true
+      return this.formatGridList
+    }
+    else {
+      this.formatGridList = false
+      return this.formatGridList
+    }
+  }
+
+  formatListView() {
+    this.grid = true
+    this.dataService.nextDataUpdate(this.FormatView().valueOf())
+    console.log("value= ", this.FormatView().valueOf())
+  }
+
+  formatGridView() {
+    this.grid = false
+    this.dataService.nextDataUpdate(this.FormatView().valueOf())
+    console.log("value ", this.FormatView())
   }
 }

@@ -21,6 +21,7 @@ export class DisplayNoteComponent implements OnInit {
   constructor(public dialog:MatDialog, private dataServices:DataService) { }
 
   ngOnInit(): void {
+    this.dataServices.store.subscribe(a=>this.gridlist=a)
     this.dataServices.currentMessage.subscribe((res:any)=>{
       console.log(res)
       this.Search=res;
@@ -29,8 +30,7 @@ export class DisplayNoteComponent implements OnInit {
   }
   openDialog(note:any){
     const dialogRef=this.dialog.open(UpdateNoteComponent,{
-      width:'40%',
-      height:'auto',
+     
       data:note,
 
     });

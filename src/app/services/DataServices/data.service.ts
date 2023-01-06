@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
@@ -9,16 +10,15 @@ export class DataService {
   private messageSource = new BehaviorSubject('All notes');
   currentMessage = this.messageSource.asObservable();
 
-  private messageS = new BehaviorSubject({data:'',
-                                              type:''});
-  currentM = this.messageS.asObservable();
+  private info = new Subject<any>();
+  public store = this.info.asObservable();
 
   constructor() { }
 
   sendMessage(message: string) {
     this.messageSource.next(message)
   }
-  changeMessage(data:any) {
-    this.messageSource.next(data)
+  nextDataUpdate(text:any){
+    this.info.next(text);
   }
 }

@@ -1,7 +1,9 @@
 .head {
     display: flex;
     flex-wrap: wrap;
-    
+    background: transparent;
+    width: 475px;
+    margin: -24px;
 }
 
 .notes {
@@ -51,9 +53,9 @@
     font-size: large;
     background-color: transparent;
     border:0px transparent;
-    margin-right: 40px;
-    padding-top:15px;
+    margin-right: -51px;
     justify-content: space-between;
+    margin-bottom: -22px;
     border: none;
 }
 .clz{

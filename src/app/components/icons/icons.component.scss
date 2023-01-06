@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin: 1px;
+    width: 300px;
 }
 .icon button{
     margin-right: 10px;
@@ -24,9 +25,11 @@ button:hover {
 .restore{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin: 1px;
-    margin-left: 250px;
+    margin-left: 8px;
+    width: 298px;
+    height: auto;
 }
 .restore button{
     margin-right: 10px;

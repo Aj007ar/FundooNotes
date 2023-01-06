@@ -18,6 +18,8 @@
     margin-bottom: 30px;
     margin-left: 4px;
     margin-right: 30px;
+    width: 300px;
+    height: 150px;
 }
 
 .notes:hover {
@@ -36,13 +38,15 @@
     font-size: medium;
 }
 
-.icons {
+.icons{
+    display: none;
+}
+.icons:hover{
     display: block;
 }
-
-// .notes:hover .icons {
-//     display: block;
-// }
+.notes:hover .icons {
+    display: block;
+}
 
 .select{
     background-position: center;
@@ -50,7 +54,7 @@
     display: none;
 }
 .gridToList{
-    width: 50%;
+    width: 743px;
     height: 150px;
-    margin-left: 255px;
+    margin-left: 242px;
   }

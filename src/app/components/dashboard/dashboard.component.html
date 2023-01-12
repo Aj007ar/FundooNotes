@@ -22,17 +22,17 @@
             </div>
         </div>
         <div class="btn-container">
-            <div role="button" data-tooltip-text="Refresh" aria-label="Refresh" style="user-select: none;"
+            <div role="button" matTooltip="Refresh" aria-label="Refresh" style="user-select: none;"
                 class="refresh">
                 <img src="../../../assets/refresh.svg" alt="">
             </div>
             <div *ngIf="!grid" class="listview">
-                <button  (click)="formatListView();FormatView()" >
-                    <img src="../../../assets/list view.svg" alt="">
+                <button  (click)="formatListView();FormatView()" matTooltip="Grid View">
+                    <img src="../../../assets/grid.svg" alt="">
                 </button>
             </div>
             <div *ngIf="grid" class="gridview">
-                <button (click)="formatGridView();FormatView()">
+                <button (click)="formatGridView();FormatView()" matTooltip="List View">
                     <img src="../../../assets/list view.svg" alt="">
                 </button>
             </div>

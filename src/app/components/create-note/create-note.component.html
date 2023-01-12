@@ -19,7 +19,7 @@
     </div>
     <div *ngIf="isShow" class="close">
         <div>
-            <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
+            <app-icons [noteCard]="data"></app-icons>
         </div>
         <button (click)="Close()" class="clz">Close</button>
     </div>

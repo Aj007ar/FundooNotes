@@ -15,7 +15,7 @@ export class UpdateNoteComponent implements OnInit {
   message:any;
   // @Input() noteCard:any;
   @Output() IconEvent = new EventEmitter<string>();
-  @Output() UpdateEvent = new EventEmitter<string>();
+  // @Output() UpdateEvent = new EventEmitter<string>();
   constructor(private note:NoteService,public dialogRef:MatDialogRef<UpdateNoteComponent>,
    @Inject(MAT_DIALOG_DATA) public data:any) {
       this.title=data.title;
@@ -39,8 +39,8 @@ export class UpdateNoteComponent implements OnInit {
       noteId:this.id
     }
     this.note.updateService(data).subscribe((response:any)=>{
-      // console.log("update response",response);
-      this.UpdateEvent.emit(response)
+      console.log("update response",response);
+      // this.UpdateEvent.emit(response)
     })
     this.dialogRef.close();
   }

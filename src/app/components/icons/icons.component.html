@@ -11,7 +11,7 @@
         <button mat-icon-button matTooltip="BackroundColor" mat-button [matMenuTriggerFor]="color"> <img
                 src="../../../assets/backColor.svg"></button>
         <mat-menu #color="matMenu">
-            <div fxLayout="row wrap" style="padding-left: 8px;" fxLayout="row" fxLayoutAlign="none" class="bg">
+            <div style="padding-left: 8px;" class="bg">
                 <div class="bg-color" *ngFor="let color of colors">
                     <button class="colorboxSetting" mat-raised-button [matTooltip]="color.name" [style.background]="color.code"
                         (click)="colorChange(color.code)"></button>

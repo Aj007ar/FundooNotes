@@ -108,6 +108,26 @@ deleteForever(payload:any)
         'Authorization': this.token
       })
     }
-    return this.httpService.postService("/notes/{id}/AddcollaboratorsNotes", data, true, header)
+    return this.httpService.postService("/notes/"+id+"/AddcollaboratorsNotes", data, true, header)
+  }
+  getCollab(data:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/user/searchUserList", data, true, header)
+  }
+  removeCollab(id:any,collaboratorUserId:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.deleteService(`/notes/${id}/removeCollaboratorsNotes/${collaboratorUserId}`,true, header)
   }
 }

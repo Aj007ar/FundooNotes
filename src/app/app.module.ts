@@ -52,7 +52,7 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     ArchiveNoteComponent,
     UpdateNoteComponent,
     FilterPipe,
-    CollaboratorComponent
+    CollaboratorComponent,
   ],
   imports: [
     BrowserModule,

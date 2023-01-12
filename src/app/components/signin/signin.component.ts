@@ -12,9 +12,9 @@ import { UserService } from 'src/app/services/userService/user.service';
 export class SigninComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
-  users='1'
-
-  constructor(private formBuilder: FormBuilder, private user: UserService, private router:Router) { }
+  users = '1'
+  hide = true;
+  constructor(private formBuilder: FormBuilder, private user: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -24,6 +24,7 @@ export class SigninComponent implements OnInit {
     });
     // localStorage.setItem('SeesionUser',this.users)
   }
+
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
@@ -38,7 +39,10 @@ export class SigninComponent implements OnInit {
       }
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);
-        localStorage.setItem('token',response.id)
+        localStorage.setItem('token', response.id)
+        localStorage.setItem("fname", response.firstName);
+        localStorage.setItem("lname", response.lastName);
+        localStorage.setItem("email", response.email);
         this.router.navigateByUrl("/home/notes");
       }
       )

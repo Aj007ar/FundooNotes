@@ -16,5 +16,4 @@ export class FilterPipe implements PipeTransform {
       return note.title.toLowerCase().includes(args) | note.description.toLowerCase().includes(args);
     })
   }
-
 }

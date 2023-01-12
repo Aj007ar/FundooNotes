@@ -1,6 +1,7 @@
 import { AUTO_STYLE } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataService } from 'src/app/services/DataServices/data.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
@@ -13,12 +14,13 @@ export class DisplayNoteComponent implements OnInit {
 
   @Input() recieveNoteList: any;
   @Output() eventForDisplay = new EventEmitter<string>();
+  // @Output() UpdateEvent = new EventEmitter<string>();
   title:any;
   description:any;
   message:any;
   Search='';
   gridlist: any;
-  constructor(public dialog:MatDialog, private dataServices:DataService) { }
+  constructor(public dialog:MatDialog, private dataServices:DataService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.dataServices.store.subscribe(a=>this.gridlist=a)
@@ -38,6 +40,11 @@ export class DisplayNoteComponent implements OnInit {
       this.title;
       this.description;
       console.log('The dialog was closed',reponse);
+      this.eventForDisplay.emit(reponse)
+      this.snackbar.open('Note updated successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 

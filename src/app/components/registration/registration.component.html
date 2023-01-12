@@ -52,7 +52,7 @@
           <div class="pass">
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" type="password" formControlName="password" class="form-control">
+              <input matInput placeholder="Password" type="password" formControlName="password" class="form-control" [type]="show ? 'text' : 'password'">
               <!-- <mat-hint>including atleast 1 uppercase,lowercase and special characters</mat-hint> -->
               <mat-error>Enter valid password</mat-error>
             </mat-form-field>
@@ -61,7 +61,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Confirm</mat-label>
               <input matInput placeholder="Re-enter Password" type="password" formControlName="confirmPassword"
-                class="form-control">
+                class="form-control" [type]="show ? 'text' : 'password'" >
             </mat-form-field>
           </div>
         </div>
@@ -69,8 +69,8 @@
           <p>Use 8 or more characters including atleast 1 uppercase,lowercase and special characters</p>
         </div>
         <div class="show-pass">
-          <input type="checkbox">
-          <label> Show Password</label><br>
+          <input type="checkbox" (click)="password()">{{show ? 'Hide' : 'Show'}}
+          <label></label><br>
         </div>
         <div class="submit-field">
           <div class="sign-instead">

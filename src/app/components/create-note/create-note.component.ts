@@ -15,7 +15,7 @@ export class CreateNoteComponent implements OnInit {
   isShow = false;
   message: any;
   @Input() noteCard: any;
-  @Output() IconEvent = new EventEmitter<string>();
+  // @Output() IconEvent = new EventEmitter<string>();
   @Output() CreateEvent = new EventEmitter<string>();
   constructor(private note: NoteService, private snackbar: MatSnackBar) { }
 
@@ -34,33 +34,32 @@ export class CreateNoteComponent implements OnInit {
     this.isShow = false;
     if ((this.title != null && this.title != "") || (this.description != null && this.description != "")) {
       console.log(this.title, this.description)
-      let payload = {
+      let data = {
         "title": this.title,
         "description": this.description,
-        "color": this.color,
+        "color": this.data.color,
       }
-      this.note.addNote(payload).subscribe((res: any) => {
+      this.note.addNote(data).subscribe((res: any) => {
         console.log(res);
         this.CreateEvent.emit(res)
         this.title = "",
           this.description = "";
-        this.color = "";
+        this.color = ""; 
 
-        this.snackbar.open('Note Created successfully', '', {
-          duration: 3000,
-          verticalPosition: 'bottom'
-        })
       })
-
+      this.snackbar.open('Note Created successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
     }
   }
 
-  recievedEventFromIcon($event: any) {
-    console.log("event from icon to disply", $event);
-    this.message = $event;
-    console.log("message", this.message);
-    this.IconEvent.emit(this.message)
-  }
+  // recievedEventFromIcon($event: any) {
+  //   console.log("event from icon to disply", $event);
+  //   this.message = $event;
+  //   console.log("message", this.message);
+  //   this.CreateEvent.emit(this.message)
+  // }
   openSnackbar(message: any, action: any) {
     this.snackbar.open(message, action)
   }

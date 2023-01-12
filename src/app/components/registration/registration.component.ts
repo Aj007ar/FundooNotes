@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/userService/user.service';
 export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
-
+  show=false;
   constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
   ngOnInit() {
@@ -22,6 +22,10 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       service: ['advanced', Validators.required]
     });
+  }
+
+  password(){
+    this.show=!this.show;
   }
   get f() { return this.registerForm.controls; }
 

@@ -1,15 +1,48 @@
-.heading{
-    margin-top: -31px;
-    border-bottom: groove;
-}
-.btn{
+::ng-deep mat-dialog-container {
+    border-radius: 10px !important;
+    padding: 0px !important;
+    // overflow: hidden !important;
+  }
+  .collabs{
+    padding: 20px;
+  }
+
+  .collab{
     display: flex;
-    flex-direction: row-reverse;
-    margin-top: 60px;
-}
-.btn button{
-    margin-right: 10px;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 5px;
+  }
+ 
+  .rows{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+  }
+
+  .buttons{
+    display:flex;
+    justify-content: flex-end;
+    background-color: rgba(0,0,0,.07);
+    padding: 10px;
+  }
+
+  .buttons button{
+    margin: 0px 10px 0px 10px;
+  }
+  .menu{
+    margin: 1px;
+  }
+  .mat-menu-panel {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
+    min-height: 64px;
+    position: relative;
+  }
+  .remove{
+    background: transparent;
     border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
+  }

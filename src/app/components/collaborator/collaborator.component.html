@@ -4,7 +4,8 @@
     <hr />
 
     <div class="rows">
-        <button mat-icon-button class="remove"> <img src="../../../assets/Circle-icons-profile.svg" width="33px" height="33px"> </button>
+        <button mat-icon-button class="remove"> <img src="../../../assets/Circle-icons-profile.svg" width="33px"
+                height="33px"> </button>
         <div class="collab">
             <span><b>{{fname}} </b><b>{{lname}}</b><i>(Owner)</i></span>
             <span>{{email}}</span>
@@ -13,18 +14,23 @@
     </div>
 
     <div *ngFor="let c of collabs" class="rows">
-        <button mat-icon-button class="remove"> <img src="../../../assets/Circle-icons-profile.svg" width="33px" height="33px"> </button>
+        <div class="lg">
+            <div class="font">{{c.firstName[0]}}</div>
+        </div>
         <div class="collab">
-            <span><b>{{c.firstName}} </b><b>{{c.lastName}}</b></span>
+            <div class="name"><b>{{c.firstName}} </b><b>{{c.lastName}}</b></div>
             <span>{{c.email}}</span>
         </div>
-        <button mat-icon-button class="remove" (click)="removeCollab(c.userId)"><img src="../../../assets/Cancel-Search.svg"></button>
+        <button mat-icon-button class="remove" (click)="removeCollab(c.userId)"><img
+                src="../../../assets/Cancel-Search.svg"></button>
     </div>
 
     <div class="rows">
-        <button mat-icon-button style="border: 1px solid gray;" class="remove"> <img src="../../../assets/add_person.svg" width="24px" height="36px"> </button>
+        <button mat-icon-button style="border: 1px solid gray;" class="remove"> <img
+                src="../../../assets/add_person.svg" width="24px" height="36px"> </button>
         <div class="collab" style="padding: 10px 0px;">
-            <input matInput placeholder="Person or email to share with" (keyup)="collab($event)" [(ngModel)]="collabEmail" [matMenuTriggerFor]="collablist">
+            <input matInput placeholder="Person or email to share with" (keyup)="collab($event)"
+                [(ngModel)]="collabEmail" [matMenuTriggerFor]="collablist">
         </div>
         <mat-menu #collablist="matMenu" class="menu">
             <div style="padding-left: 8px;" class="bg">
@@ -33,7 +39,8 @@
                 </div>
             </div>
         </mat-menu>
-        <button mat-icon-button (click)="addCollab()" [style]="collabEmail==''? 'opacity:0' : 'opacity: 1'" class="remove"><img src="../../../assets/done_black_24dp.svg"></button>
+        <button mat-icon-button (click)="addCollab()" [style]="collabEmail==''? 'opacity:0' : 'opacity: 1'"
+            class="remove"><img src="../../../assets/done_black_24dp.svg"></button>
     </div>
 
 </div>

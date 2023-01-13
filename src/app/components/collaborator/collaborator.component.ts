@@ -18,6 +18,8 @@ export class CollaboratorComponent implements OnInit {
   collabData: any;
   collabs:any=[];
   collabResponse:any;
+  collabName:any;
+
   @Output() changeCollabEvent = new EventEmitter<any>();
 
   id: any;
@@ -35,10 +37,6 @@ export class CollaboratorComponent implements OnInit {
 
     this.dialogRef.close();
   }
-  getCollab(){
-    console.log(this.collabs);
-    
-  }
 
   ngOnInit(): void {
 
@@ -54,7 +52,7 @@ export class CollaboratorComponent implements OnInit {
     console.log(data);
     this.note.addCollab(this.data.id, data).subscribe((response: any) => {
       console.log(response);
-      this.changeCollabEvent.emit(response.data.collaborators);
+      this.collabs.push(data)
     })
   }
 
@@ -76,12 +74,12 @@ export class CollaboratorComponent implements OnInit {
   }
   save(collabList:any){
     this.dialogRef.close(collabList);
-    this.changeCollabEvent.emit(collabList);
   }
 
   removeCollab(collabid:any){
     this.note.removeCollab(this.data.id, collabid).subscribe((res:any)=>{
       console.log(res);
+      this.collabs.push(res)
     })
   }
 }

@@ -13,6 +13,7 @@ import { AuthenticationGuard } from './Guard/authentication.guard';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 
+
 const routes: Routes = [
   {path:'signin', component:SigninComponent},
   {path:'registration', component:RegistrationComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
   children:[
     {path:'notes', component:GetAllNotesComponent},
     {path:'trash', component:TrashNoteComponent},
-    {path:'archive', component:ArchiveNoteComponent}
+    {path:'archive', component:ArchiveNoteComponent},
   ]},
   
 ];

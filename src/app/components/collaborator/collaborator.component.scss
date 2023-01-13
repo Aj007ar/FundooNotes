@@ -29,6 +29,8 @@
 
   .buttons button{
     margin: 0px 10px 0px 10px;
+    background: transparent;
+    border: none;
   }
   .menu{
     margin: 1px;
@@ -45,4 +47,23 @@
   .remove{
     background: transparent;
     border: none;
+  }
+  .font{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 6px;
+    margin-left: 10px;
+    color: aliceblue;
+    font-weight: bolder;
+  }
+  .name{
+    text-transform: capitalize;
+  }
+  .lg{
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    background-color: #508178;
+    margin-right: 10px;
+    margin-left: 5px;
   }

@@ -1,10 +1,11 @@
-body{
+body {
     width: 100%;
     max-width: 600px;
     margin: 0px auto;
     padding: 2em;
 }
-.header-container{
+
+.header-container {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -13,17 +14,20 @@ body{
     padding: 24px 24px 80px;
     border-radius: 5px;
     margin-left: 25%;
-    
+
     width: 50rem;
 }
-.form-container{
+
+.form-container {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
 }
-.img1{
+
+.img1 {
     width: 20rem;
 }
-.logo ul{
+
+.logo ul {
     display: flex;
     list-style-type: none;
     flex-direction: row;
@@ -32,64 +36,76 @@ body{
     margin: 0rem;
     padding: 0rem
 }
-.name-block{
+
+.name-block {
     display: flex;
     flex-direction: row;
     margin: 0rem;
     padding: 0rem;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin-bottom: -1rem;
     margin-left: -2px;
     margin-right: 2rem;
 }
-.f{
+
+.f {
     color: rgb(9, 167, 229);
 }
-.u{
+
+.u {
     color: red;
 }
-.n{
+
+.n {
     color: yellow;
 }
-.d{
+
+.d {
     color: rgb(9, 167, 229);
 }
-.o{
+
+.o {
     color: green;
 }
-.o1{
+
+.o1 {
     color: red;
 }
-.header-name h1{
+
+.header-name h1 {
     color: #202124;
     padding-bottom: 0;
     padding-top: 16px;
-    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.3333;
     margin-bottom: 0;
     margin-top: 0;
-    
+
     word-break: break-word;
 }
-.logo-block{
+
+.logo-block {
     display: flex;
     flex-direction: column;
     height: 30rem;
     margin: 72px 4px 0;
     text-align: center;
 }
-.form-block{
+
+.form-block {
     height: 30rem;
     display: block;
     margin: 0rem;
     padding: 0rem;
 }
-.fname{
+
+.fname {
     width: 13rem;
 }
-.email-container{
+
+.email-container {
     margin: 0rem;
     font-size: 14px;
     height: 20px;
@@ -97,31 +113,38 @@ body{
     margin-bottom: -1rem;
     margin-left: -12px;
 }
-.email{
+
+.email {
     width: 75%;
 }
-.email-field{
+
+.email-field {
     width: 412px;
 }
-.mail-msg h3{
+
+.mail-msg h3 {
     padding: 4rem;
     margin-left: -3rem;
     display: flex;
 }
-.password-field{
+
+.password-field {
     display: flex;
     margin: 0rem;
-    margin-bottom: -2rem;   
+    margin-bottom: -2rem;
     margin-left: -3px;
 }
-.mat-form-field{
+
+.mat-form-field {
     padding: 0rem;
     width: 94%;
 }
-.figcaption{
+
+.figcaption {
     display: block;
 }
-.caption{
+
+.caption {
     font-size: 16px;
     font-weight: 300;
     display: block;
@@ -131,16 +154,19 @@ body{
     margin-left: 71px;
     text-align: center;
 }
-.pass{
+
+.pass {
     width: 13rem;
 }
-.mail-msg{
+
+.mail-msg {
     margin: 0rem;
     margin-bottom: -4rem;
     padding: 0rem;
     margin-left: -15px;
 }
-.pass-msg{
+
+.pass-msg {
     margin: -1rem;
     margin-bottom: -4rem;
     padding: 1rem;
@@ -152,13 +178,15 @@ body{
     margin-top: .6666666667em;
     top: calc(100% - 1.7916666667em);
 }
-.show-pass{
+
+.show-pass {
     margin: 3rem;
     padding: 1rem;
     margin-left: -22px;
     margin-bottom: -2rem;
 }
-.submit-field{
+
+.submit-field {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -167,37 +195,121 @@ body{
     min-height: 48px;
     padding-bottom: 20px;
 }
+
 .button {
-  background-color: #185abc;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 6px;
+    background-color: #185abc;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
 }
-.link{
+
+.link {
     color: #1a73e8;
     text-decoration: none;
     cursor: pointer;
 }
-@media (max-width:800px) {
-    .header-container{
-        width: 100%;
-        height: auto;
-        margin: 0px;
+
+@media only screen and (max-width:860px) {
+    .logo{
+        margin: 1px;
+    }
+    .header-container {
+        padding: 3px 25px 136px;
+    margin-left: -7%;
+    margin-top: 8px;
+    border: none;
+    }
+
+    .logo-block {
+        display: none;
+    }
+    .form-block {
+        height: 30rem;
+        display: block;
+        margin: 0rem;
+        padding: 0rem;
+    }
+    .name-block{
         display: flex;
         flex-direction: column;
     }
-    .form-container{
-        width: 100%;
-        height: auto;
+    .mat-form-field {
+        padding: 0rem;
+    width: 82%;
     }
-    .logo-block{
+    .fname {
+        display: block;
+
+        .mat-form-field {
+            padding: 0rem;
+            width: 166%;
+        }
+    }
+    .lname {
+        display: block;
+
+        .mat-form-field {
+            padding: 0rem;
+            width: 91%;
+        }
+    }
+    .email-container {
+       display: block;
+       .mat-form-field {
+        padding: 0rem;
+        width: 86%;
+    }
+    }
+    .password-field {
+        display: flex;
+        flex-direction: column;
+        .pass{
+
+        .mat-form-field {
+            padding: 0rem;
+            width: 166%;
+        }
+    }
+    .conf-pass{
+        margin-bottom: -48px;
+        .mat-form-field {
+            padding: 0rem;
+            width: 84%;
+        }
+    }
+    }
+    .mail-msg {
+        margin: 0rem;
+        margin-bottom: -4rem;
+        padding: 0rem;
+        margin-left: -15px;
+    }
+    .show-pass {
+        margin: 3rem;
+        padding: 1rem;
+        margin-left: -22px;
+        margin-bottom: -2rem;
+    }
+    .pass-msg{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:601px) {
+    .header-container {
+        padding: 3px 25px 136px;
+    margin-left: -7%;
+    margin-top: 8px;
+    border: none;
+    }
+    .logo-block {
         display: none;
     }
 }

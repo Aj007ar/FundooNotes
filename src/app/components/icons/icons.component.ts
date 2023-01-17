@@ -13,6 +13,7 @@ export class IconsComponent implements OnInit {
 
   @Input() noteCard:any;
   @Output() IconEvent = new EventEmitter<string>();
+  @Output() collabEvent=new EventEmitter<any>();
   isArchive=false;
   isDelete=false;
   isArchived:any;
@@ -132,7 +133,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  openDialog(data:any){
+  openDialog(){
     const dialogRef=this.dialog.open(CollaboratorComponent,{
       width:'40%',
       height:'auto',
@@ -141,11 +142,7 @@ export class IconsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(reponse=>{
       console.log('The dialog was closed',reponse);
-
-      this.snackbar.open('Note Collaborator Added successfully', '', {
-        duration: 3000,
-        verticalPosition: 'bottom'
-      })
+      this.collabEvent.emit(reponse)
     })
   }
 }

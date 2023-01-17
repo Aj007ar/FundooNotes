@@ -7,7 +7,7 @@
         <button mat-icon-button class="remove"> <img src="../../../assets/Circle-icons-profile.svg" width="33px"
                 height="33px"> </button>
         <div class="collab">
-            <span><b>{{fname}} </b><b>{{lname}}</b><i>(Owner)</i></span>
+            <span style="text-transform:capitalize"><b>{{fname}} </b><b>{{lname}}</b><i>(Owner)</i></span>
             <span>{{email}}</span>
         </div>
         <button mat-icon-button style="visibility:hidden;"><img src="../../../assets/Cancel-Search.svg"></button>
@@ -46,6 +46,6 @@
 </div>
 
 <div class="buttons">
-    <button mat-button matTooltip="Cancel">Cancel</button>
+    <button mat-button matTooltip="Cancel" (click)="cancel(collabs)">Cancel</button>
     <button mat-button matTooltip="Save" (click)="save(collabs)">Save</button>
 </div>

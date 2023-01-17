@@ -2,6 +2,13 @@
     <div class="notes">
         <input class="title" [(ngModel)]="title">
         <input class="description" [(ngModel)]="description">
+        <div class="collab">
+            <div *ngFor="let c of data.collaborators" class="rows" [matTooltip]="c.email">
+                <div class="lg">
+                    <div class="font">{{c.firstName[0]}}</div>
+                </div>
+            </div>
+        </div>
         <div class="icons">
             <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
             <button (click)="closeDialog()" class="clz">Close</button>

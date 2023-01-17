@@ -1,13 +1,21 @@
 <div class="head">
-    <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color" [class.gridToList]="gridlist"  (UpdateEvent)="recievedEventFromIcon($event)">
+    <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color"
+        [class.gridToList]="gridlist" (UpdateEvent)="recievedEventFromIcon($event)">
         <div class="title">
             <p (click)="openDialog(data)">{{data.title}}</p>
         </div>
         <div class="description">
             <p (click)="openDialog(data)">{{data.description}}</p>
         </div>
+        <div class="collab">
+        <div *ngFor="let c of data.collaborators" class="rows" [matTooltip]="c.email">
+            <div class="lg">
+                <div class="font">{{c.firstName[0]}}</div>
+            </div>
+        </div>
+    </div>
         <div class="icons">
-            <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)"></app-icons>
+            <app-icons [noteCard]="data" (IconEvent)="recievedEventFromIcon($event)" (collabEvent)="getCollab($event)"></app-icons>
         </div>
     </div>
 </div>

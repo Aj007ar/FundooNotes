@@ -17,31 +17,27 @@
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="name-block">
           <div class="fname">
-            <p>
               <mat-form-field appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder="FirstName" type="text" formControlName="firstName" class="form-control">
-                <mat-hint>First letter should be capital</mat-hint>
+                <!-- <mat-hint>First letter should be capital</mat-hint> -->
                 <mat-error>Enter valid first name</mat-error>
               </mat-form-field>
-            </p>
           </div>
           <div class="lname">
-            <p>
               <mat-form-field appearance="outline">
                 <mat-label>Last Name</mat-label>
                 <input matInput placeholder="LastName" type="text" formControlName="lastName" class="form-control">
-                <mat-hint>First letter should be capital</mat-hint>
+                <!-- <mat-hint>First letter should be capital</mat-hint> -->
                 <mat-error>Enter valid last name</mat-error>
               </mat-form-field>
-            </p>
           </div>
         </div>
         <div class="email-container">
           <mat-form-field class="email-field" appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput placeholder="Enter Email" type="text" formControlName="email" class="form-control">
-            <mat-hint>Use letters , characters and numbers</mat-hint>
+            <!-- <mat-hint>Use letters , characters and numbers</mat-hint> -->
             <mat-error>Enter valid email</mat-error>
           </mat-form-field>
         </div>
@@ -52,7 +48,8 @@
           <div class="pass">
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" type="password" formControlName="password" class="form-control" [type]="show ? 'text' : 'password'">
+              <input matInput placeholder="Password" type="password" formControlName="password" class="form-control"
+                [type]="show ? 'text' : 'password'">
               <!-- <mat-hint>including atleast 1 uppercase,lowercase and special characters</mat-hint> -->
               <mat-error>Enter valid password</mat-error>
             </mat-form-field>
@@ -61,7 +58,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Confirm</mat-label>
               <input matInput placeholder="Re-enter Password" type="password" formControlName="confirmPassword"
-                class="form-control" [type]="show ? 'text' : 'password'" >
+                class="form-control" [type]="show ? 'text' : 'password'">
             </mat-form-field>
           </div>
         </div>

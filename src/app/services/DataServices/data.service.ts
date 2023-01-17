@@ -13,12 +13,14 @@ export class DataService {
   private info = new Subject<any>();
   public store = this.info.asObservable();
 
+
   constructor() { }
 
   sendMessage(message: string) {
     this.messageSource.next(message)
   }
-  nextDataUpdate(text:any){
+
+  nextDataUpdate(text: any) {
     this.info.next(text);
   }
 }

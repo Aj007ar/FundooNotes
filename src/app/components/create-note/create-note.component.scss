@@ -96,3 +96,13 @@
     background-color: transparent;
     cursor: pointer;
 }
+@media(min-width:160px)and (max-width:600px){
+    .note-container{
+        width: 483px;
+    margin: 14px;
+    margin-left: 36px;
+    }
+    .icons{
+        padding-left: 325px;
+    }
+}

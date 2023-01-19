@@ -216,15 +216,18 @@ body {
     cursor: pointer;
 }
 
-@media only screen and (max-width:860px) {
+@media(min-width:160px)and (max-width:600px) {
     .logo{
         margin: 1px;
     }
     .header-container {
-        padding: 3px 25px 136px;
-    margin-left: -7%;
-    margin-top: 8px;
-    border: none;
+        padding: 39px 88px 136px;
+        margin-left: -7%;
+        margin-top: 8px;
+        border: none;
+    }
+    .form-container{
+        width: 90%;
     }
 
     .logo-block {
@@ -240,16 +243,16 @@ body {
         display: flex;
         flex-direction: column;
     }
-    .mat-form-field {
-        padding: 0rem;
-    width: 82%;
-    }
+    // .mat-form-field {
+    //     padding: 0rem;
+    // width: 82%;
+    // }
     .fname {
         display: block;
 
         .mat-form-field {
             padding: 0rem;
-            width: 166%;
+            width: 225%;
         }
     }
     .lname {
@@ -257,14 +260,14 @@ body {
 
         .mat-form-field {
             padding: 0rem;
-            width: 91%;
+            width: 104%;
         }
     }
     .email-container {
        display: block;
        .mat-form-field {
         padding: 0rem;
-        width: 86%;
+        width: 100%;
     }
     }
     .password-field {
@@ -274,14 +277,14 @@ body {
 
         .mat-form-field {
             padding: 0rem;
-            width: 166%;
+            width: 226%;
         }
     }
     .conf-pass{
         margin-bottom: -48px;
         .mat-form-field {
             padding: 0rem;
-            width: 84%;
+            width: 100%;
         }
     }
     }
@@ -301,15 +304,80 @@ body {
         display: none;
     }
 }
-
-@media only screen and (max-width:601px) {
-    .header-container {
-        padding: 3px 25px 136px;
-    margin-left: -7%;
-    margin-top: 8px;
-    border: none;
+@media(min-width:600px)and (max-width:899px) {
+    .logo{
+        margin: 1px;
     }
+    .header-container {
+        margin-left: 110px;
+        width: 450px;
+    }
+
     .logo-block {
         display: none;
     }
+    // .form-block {
+    //     margin: 0px;
+    // }
+    // .name-block{
+    //     margin: 0px;
+    // }
+    // .mat-form-field {
+    //     margin: 0px;
+    // }
+    // .fname {
+    //     display: block;
+
+    //     .mat-form-field {
+    //         padding: 0rem;
+    //         width: 166%;
+    //     }
+    // }
+    // .lname {
+    //     display: block;
+
+    //     .mat-form-field {
+    //         padding: 0rem;
+    //         width: 91%;
+    //     }
+    // }
+    // .email-container {
+    //    display: block;
+    //    .mat-form-field {
+    //     padding: 0rem;
+    //     width: 86%;
+    // }
+    // }
+    // .password-field {
+    //     margin: 0px;
+    //     .pass{
+
+    //     .mat-form-field {
+    //         padding: 0rem;
+    //         width: 166%;
+    //     }
+    // }
+    // .conf-pass{
+    //     margin-bottom: -48px;
+    //     .mat-form-field {
+    //         padding: 0rem;
+    //         width: 84%;
+    //     }
+    // }
+    // }
+    // .mail-msg {
+    //     margin: 0rem;
+    //     margin-bottom: -4rem;
+    //     padding: 0rem;
+    //     margin-left: -15px;
+    // }
+    // .show-pass {
+    //     margin: 3rem;
+    //     padding: 1rem;
+    //     margin-left: -22px;
+    //     margin-bottom: -2rem;
+    // }
+    // .pass-msg{
+    //     display: none;
+    // }
 }

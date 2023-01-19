@@ -34,6 +34,7 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
 import { FilterPipe } from './Pipe/filter.pipe';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,7 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     ArchiveNoteComponent,
     UpdateNoteComponent,
     FilterPipe,
-    CollaboratorComponent
+    CollaboratorComponent,
   ],
   imports: [
     BrowserModule,

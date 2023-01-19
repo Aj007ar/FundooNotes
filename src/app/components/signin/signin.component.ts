@@ -48,7 +48,7 @@ export class SigninComponent implements OnInit {
       )
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
 
 }

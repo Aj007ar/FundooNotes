@@ -1,167 +1,246 @@
 .example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
-  
-  h1.example-app-name {
-    margin-left: 16px;
-    color: #5f6368;
-    opacity: 1;
-    font-family: sans-serif;
-  }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 16px;
+  // color: #5f6368;
+  opacity: 1;
+  font-family: sans-serif;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-  }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-  .example-toolbar{
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-  }
-  .search-container{
-    display: flex;
-    flex-direction: row;
-    margin: 85px;
-    // background-color: #c2c2bd;
-    border-radius: 20px;
-    height: 67%;
-    padding-right: 28px;
-    background-color: #efe9e9;
-    
-  }
-  .search-field{
-    margin-bottom: 7px;
-    width: 500px;
-    height: 42px;
-    border: none;
-    background: transparent;
-    font-size: 18px;
-    box-sizing: border-box;
-    outline: none;
-    font-variant-ligatures: none;
-    background: transparent;
-    border: none;
-    font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
-  }
-  .s-btn img{
-    border: none;
-    background: transparent;
-    height: 100%;
-    margin-bottom: -22px;
-  }
-  .btn-container{
-    display: flex;
-    flex-direction: row;
-    margin: 21px;
-  }
-  .refresh{
-    margin-right: 30px;
-  }
-  .listV{
-    margin-right: 30px;
-  }
-  .set{
-    margin-right: 30px;
-  }
-  .apps{
-    margin-right: 30px;
-  }
-  .menu-btn{
-    margin: 25px;
-  }
-  .logo{
-    width: 52px;
-    height: 52px;
-}
-.srch{
-  width: 700px;
-}
-.note{
-  display: flex;
-  flex-direction: row;
-  padding-left: 15px;
-  // background-color: #feefc3;
-  // background-color: #feefc3;
-}
-.rem{
-  display: flex;
-  flex-direction: row;
-  padding-left: 15px;
-  // background-color: #feefc3;
-}
-.label{
-  display: flex;
-  flex-direction: row;
-  padding-left: 15px;
-  // background-color: #feefc3;
-}
-.arcv{
-  display: flex;
-  flex-direction: row;
-  padding-left: 15px;
-  // background-color: #feefc3;
-}
-.trash{
-  display: flex;
-  flex-direction: row;
-  padding-left: 15px;
-  // background-color: #feefc3;
-}
-// .sidenav .note{
-//   background-color: #feefc3;
-// }
-.gridview button{
-  border: 0px;
-  background-color: transparent;
-  padding-left: 0px;
-  padding-right: 27px;
-  opacity:0.7;
+  flex: 1 0 auto;
 }
 
-.listview button{
-  border: 0px;
-  background-color: transparent;
-  padding-left: 0px;
-  padding-right: 27px;
-  opacity:0.7;
+.example-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
 }
-@media (max-width: 1000px) {
-  .example-container{
 
-width: 100%;
+.search-container {
+  display: flex;
+  flex-direction: row;
+  margin: 85px;
+  // background-color: #c2c2bd;
+  border-radius: 20px;
+  height: 67%;
+  padding-right: 28px;
+  background-color: #efe9e9;
+
 }
-.srch{
-  display: none;
+
+.search-field {
+  margin-bottom: 7px;
+  width: 500px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  box-sizing: border-box;
+  outline: none;
+  font-variant-ligatures: none;
+  background: transparent;
+  border: none;
+  font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
 }
-.s-btn img{
+
+.s-btn img {
   border: none;
   background: transparent;
   height: 100%;
   margin-bottom: -22px;
 }
-.example-app-name{
-  margin-right: -72px;
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  margin: 21px;
 }
-.search-container{
+
+.refresh {
+  margin-right: 30px;
+}
+
+.listV {
+  margin-right: 30px;
+}
+
+.set {
+  margin-right: 30px;
+}
+
+.apps {
+  margin-right: 30px;
+}
+
+.menu-btn {
+  margin: 25px;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+}
+
+.srch {
+  width: 700px;
+}
+
+.note {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  // background-color: #feefc3;
+  // background-color: #feefc3;
+}
+
+.rem {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  // background-color: #feefc3;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  // background-color: #feefc3;
+}
+
+.arcv {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  // background-color: #feefc3;
+}
+
+.trash {
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  // background-color: #feefc3;
+}
+
+// .sidenav .note{
+//   background-color: #feefc3;
+// }
+.gridview button {
+  border: 0px;
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 27px;
+  opacity: 0.7;
+}
+
+.listview button {
+  border: 0px;
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 27px;
+  opacity: 0.7;
+}
+
+// @media (max-width: 1000px) {
+//   .example-container{
+
+// width: 100%;
+// }
+// .srch{
+//   display: none;
+// }
+// .s-btn img{
+//   border: none;
+//   background: transparent;
+//   height: 100%;
+//   margin-bottom: -22px;
+// }
+// .example-app-name{
+//   margin-right: -72px;
+// }
+// .search-container{
+//   margin-right: 1px;
+// }
+// }
+// @media only screen and (min-width:260px){
+//   .example-container{
+
+//     width: 100%;
+//     }
+//     .srch{
+//       display: none;
+//     }
+//     .s-btn img{
+//       border: none;
+//       background: transparent;
+//       height: 100%;
+//       margin-bottom: -22px;
+//     }
+//     .example-app-name{
+//       margin-right: -72px;
+//     }
+//     .search-container{
+//       margin-right: 1px;
+//     }
+// }
+@media(min-width:160px)and (max-width:600px) {
+  //   .example-container{
+
+  //     width: 100%;
+  //     }
+  .srch {
+    display: none;
+  }
+
+  .s-btn img {
+    border: none;
+    background: transparent;
+    height: 100%;
+    margin-bottom: -14px;
+    margin-left: -24px;
+  }
+
+  //     .example-app-name{
+  //       margin-right: -72px;
+  //     }
+  .search-container {
+    background-color: transparent;
+  }
+  .btn-container{
+    margin-right: 2px;
+    margin-left: -88px;
+  }
+.set{
+  margin-left: -21px;
+}
+.apps{
+  margin-left: -23px;
+    margin-right: 3px;
+
+}
+.menu-btn{
   margin-right: 1px;
 }
 }

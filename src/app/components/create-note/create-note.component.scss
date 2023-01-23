@@ -96,13 +96,27 @@
     background-color: transparent;
     cursor: pointer;
 }
-@media(min-width:160px)and (max-width:600px){
-    .note-container{
-        width: 483px;
-    margin: 14px;
-    margin-left: 36px;
+
+@media(min-width:160px)and (max-width:600px) {
+    .note-container {
+        width: 326px;
+        margin: 14px;
+        margin-left: 23px;
     }
-    .icons{
-        padding-left: 325px;
+
+    .icons {
+        padding-left: 160px;
+    }
+}
+
+@media(min-width:600px)and (max-width:899px) {
+    .note-container {
+        width: 545px;
+        margin: 14px;
+        margin-left: 104px;
+    }
+
+    .icons {
+        padding-left: 380px;
     }
 }

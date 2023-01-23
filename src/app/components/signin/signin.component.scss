@@ -147,7 +147,7 @@
 
 .mat-form-field {
     padding: 0rem;
-    width: 94%;
+    width: 100%;
 }
 
 .example-container mat-form-field+mat-form-field {
@@ -187,12 +187,15 @@ input.example-right-align::-webkit-inner-spin-button {
 // }
 
 @media(min-width:160px)and (max-width:460px) {
+    .logo{
+        margin: 1px;
+    }
     .header-container {
         height: auto;
         align-content: center;
         // padding: 10px 25px 44px;
-        margin-left: -7%;
-        margin-top: 44px;
+        margin-left: -11%;
+        margin-top: -43px;
         border: none;
     }
 
@@ -202,28 +205,43 @@ input.example-right-align::-webkit-inner-spin-button {
     }
 
     .submit-field {
-        margin-left: 7px;
-        margin-right: 46px;
+        // margin-left: 7px;
+        margin-right: 4px;
     }
 }
 
-@media(min-width:460px)and (max-width:860px) {
+@media(min-width:460px)and (max-width:880px) {
     .header-container {
-        height: auto;
-        align-content: center;
-        padding: 122px 244px 84px;
-        margin-left: -5%;
-        margin-top: 45px;
+        margin-top: 55px;
+        margin-left: 170px;
     }
 
     .form-field {
         width: 100%;
     }
 
-    .submit-field {
-        margin-left: 7px;
-        margin-right: 46px;
+    // .submit-field {
+    //     margin-left: 7px;
+    //     margin-right: 46px;
+    // }
+
+
+
+}
+@media(min-width:912px)and (max-width:1280px) {
+    .header-container {
+        margin-top: 55px;
+        margin-left: 300px;
     }
+
+    .form-field {
+        width: 100%;
+    }
+
+    // .submit-field {
+    //     margin-left: 7px;
+    //     margin-right: 46px;
+    // }
 
 
 

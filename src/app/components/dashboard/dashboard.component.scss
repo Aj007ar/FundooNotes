@@ -162,56 +162,133 @@ h1.example-app-name {
   padding-right: 27px;
   opacity: 0.7;
 }
+.box{
+  display: none;
+}
 
-// @media (max-width: 1000px) {
-//   .example-container{
 
-// width: 100%;
-// }
-// .srch{
-//   display: none;
-// }
-// .s-btn img{
-//   border: none;
-//   background: transparent;
-//   height: 100%;
-//   margin-bottom: -22px;
-// }
-// .example-app-name{
-//   margin-right: -72px;
-// }
-// .search-container{
-//   margin-right: 1px;
-// }
-// }
-// @media only screen and (min-width:260px){
-//   .example-container{
-
-//     width: 100%;
-//     }
-//     .srch{
-//       display: none;
-//     }
-//     .s-btn img{
-//       border: none;
-//       background: transparent;
-//       height: 100%;
-//       margin-bottom: -22px;
-//     }
-//     .example-app-name{
-//       margin-right: -72px;
-//     }
-//     .search-container{
-//       margin-right: 1px;
-//     }
-// }
 @media(min-width:160px)and (max-width:600px) {
   //   .example-container{
 
   //     width: 100%;
   //     }
+  .box{  
+    display: block;
+    // max-width: 400px;  
+    // width: 100%;  
+    width: 239px;
+    margin-left: -84px;
+  }  
+  .box .searchbox{  
+    max-width: 50px;  
+    margin: auto;  
+    position: relative;  
+    height: 50px;  
+    // box-shadow: 0px 5px 30px rgba(0, 0, 0, .7);  
+    border-radius: 30px;  
+    border: none;
+    transition: .5s;  
+  }  
+  .searchbox input{  
+    width: 100%;  
+    height: 100%;  
+    position: absolute;  
+    border: none;  
+    border-radius: 30px;  
+    background-color: #efe9e9;
+    // padding-left: 20px;  
+  }  
+  .btn{  
+    width: 50px;  
+    position: absolute;  
+    top: 0;  
+    right: 0;  
+    background-color: #efe9e9;  
+    height: 100%;  
+    color: #111;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    border-radius: 30px;  
+    border: none;
+    cursor: pointer;  
+  }  
+  #label{  
+    display: none;  
+  }  
+  #label:checked~.searchbox{  
+    max-width: 380px;  
+  }  
+  #label:checked~.searchbox .btn{  
+    border-radius: 0px 30px 30px 0px;  
+    background-color: #efe9e9;  
+    color: #fff;  
+  } 
   .srch {
     display: none;
+  }
+
+  // .s-btn img {
+  //   border: none;
+  //   background: transparent;
+  //   height: 100%;
+  //   margin-bottom: -14px;
+  //   margin-left: 20px;
+
+  // }
+
+  //     .example-app-name{
+  //       margin-right: -72px;
+  //     }
+  .search-container {
+    display: none;
+  }
+
+  .btn-container {
+    margin-right: -6px;
+    margin-left: -130px;
+  }
+
+  .set {
+    margin-left: -21px;
+  }
+
+  .apps {
+    margin-left: -23px;
+    margin-right: 3px;
+
+  }
+
+  .menu-btn {
+    margin-right: -7px;
+    margin-left: -1px;
+  }
+
+  .refresh {
+    margin: 0px;
+  }
+
+  .btn-container {
+    display: none;
+  }
+
+  .apps {
+    display: none;
+  }
+
+  .pro {
+    margin: 0px;
+    margin-left: 22px;
+  }
+}
+
+@media(min-width:600px)and (max-width:899px) {
+  // //   .example-container{
+
+  // //     width: 100%;
+  // //     }
+  .srch {
+    width: 100%;
   }
 
   .s-btn img {
@@ -219,28 +296,38 @@ h1.example-app-name {
     background: transparent;
     height: 100%;
     margin-bottom: -14px;
-    margin-left: -24px;
+    margin-left: -50px;
   }
 
-  //     .example-app-name{
-  //       margin-right: -72px;
-  //     }
+  // //     .example-app-name{
+  // //       margin-right: -72px;
+  // //     }
   .search-container {
-    background-color: transparent;
+    margin-left: 82px;
+    width: 35%;
+    border-radius: 8px;
   }
-  .btn-container{
-    margin-right: 2px;
-    margin-left: -88px;
-  }
-.set{
-  margin-left: -21px;
-}
-.apps{
-  margin-left: -23px;
-    margin-right: 3px;
 
-}
-.menu-btn{
-  margin-right: 1px;
-}
+  .btn-container {
+    margin-right: -20px;
+    margin-left: -73px;
+  }
+
+  // .set {
+  //   margin-left: -21px;
+  // }
+
+  // .apps {
+  //   margin-left: -23px;
+  //   margin-right: 3px;
+
+  // }
+
+  // .menu-btn {
+  //   margin-right: -7px;
+  //   margin-left: -1px;
+  // }
+  .refresh {
+    margin: 0px;
+  }
 }

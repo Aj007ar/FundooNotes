@@ -79,20 +79,22 @@ export class CollaboratorComponent implements OnInit {
     this.collabEmail = data.email
   }
   save(collabList: any) {
+    this.addCollab()
     this.dialogRef.close(collabList);
   }
   cancel(collabList: any) {
+    
     this.dialogRef.close(collabList);
   }
 
   removeCollab(collabid: any) {
     this.note.removeCollab(this.data.id, collabid).subscribe((res: any) => {
       console.log(res);
-      this.collabs.splice(res)
-      this.snackbar.open('Note Collaborator removed successfully', '', {
-        duration: 3000,
-        verticalPosition: 'bottom'
-      })
+      this.collabs.pop(this.data)
+      // this.snackbar.open('Note Collaborator removed successfully', '', {
+      //   duration: 3000,
+      //   verticalPosition: 'bottom'
+      // })
     })
   }
 }

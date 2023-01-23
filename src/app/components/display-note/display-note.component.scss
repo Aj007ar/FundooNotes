@@ -81,8 +81,13 @@
   }
   @media(min-width:160px)and (max-width:600px){
     .notes{
-        width: 431px;
-    margin-left: -25px;
-
+        width: 333px;
+    margin-left: -65px;
+    }
+  }
+  @media(min-width:600px)and (max-width:899px){
+    .notes{
+        width: 272px;
+    margin-left: 15px;
     }
   }

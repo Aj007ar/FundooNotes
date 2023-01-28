@@ -107,6 +107,9 @@
     .icons {
         padding-left: 160px;
     }
+    .pin{
+        display: none;
+    }
 }
 
 @media(min-width:600px)and (max-width:899px) {
@@ -118,5 +121,11 @@
 
     .icons {
         padding-left: 380px;
+    }
+    // .icons {
+    //     padding-left: 160px;
+    // }
+    .pin{
+        display: none;
     }
 }

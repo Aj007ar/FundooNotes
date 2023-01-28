@@ -49,3 +49,10 @@ button:hover {
     margin: 2px;
     border: 0px solid;
 }
+@media(min-width:160px)and (max-width:600px){
+    .icon-container{
+        margin: 0px;
+        width: 266px;
+
+    }
+}

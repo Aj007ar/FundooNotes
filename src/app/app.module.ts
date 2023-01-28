@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatListModule, MatNavList} from '@angular/material/list';
@@ -33,7 +33,8 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { FilterPipe } from './Pipe/filter.pipe';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
-
+import { TokenInterceptorService } from './services/interceptor/token-interceptor.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -64,10 +65,11 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     BrowserAnimationsModule,
     HttpClientModule,MatTooltipModule,MatSnackBarModule,
     FormsModule,MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule
     
   ],
-  providers: [AuthGuardService],
+  providers: [AuthGuardService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

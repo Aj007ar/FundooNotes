@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataService } from 'src/app/services/DataServices/data.service';
 import { NoteService } from 'src/app/services/noteService/note.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-display-note',
@@ -65,11 +66,17 @@ export class DisplayNoteComponent implements OnInit {
     this.collabs = data
   }
 
-  // getAllCollab() {
-  //   this.note.getAllNote().subscribe((response: any) => {
-  //     console.log(response);
-  //     this.CollabList = response.data.data.collaborators
-  //     console.log(this.CollabList);
-  //   })
-  // }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
 }

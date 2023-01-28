@@ -53,27 +53,15 @@ export class DashboardComponent implements OnInit {
   searchNote(event:any){
     this.dataService.sendMessage(event.target.value)
   }
-
-  FormatView() {
-    if (this.formatGridList == false) {
-      this.formatGridList = true
-      return this.formatGridList
-    }
-    else {
-      this.formatGridList = false
-      return this.formatGridList
-    }
-  }
-
   formatListView() {
     this.grid = true
-    this.dataService.nextDataUpdate(this.FormatView().valueOf())
-    console.log("value= ", this.FormatView().valueOf())
+    this.dataService.nextDataUpdate(this.grid)
+    console.log("value ", this.grid)
   }
 
   formatGridView() {
     this.grid = false
-    this.dataService.nextDataUpdate(this.FormatView().valueOf())
-    console.log("value ", this.FormatView())
+    this.dataService.nextDataUpdate(this.grid)
+    console.log("value ", this.grid)
   }
 }

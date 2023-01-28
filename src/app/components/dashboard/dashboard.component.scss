@@ -283,25 +283,17 @@ h1.example-app-name {
 }
 
 @media(min-width:600px)and (max-width:899px) {
-  // //   .example-container{
-
-  // //     width: 100%;
-  // //     }
   .srch {
     width: 100%;
   }
 
   .s-btn img {
     border: none;
-    background: transparent;
+    // background: transparent;
     height: 100%;
     margin-bottom: -14px;
     margin-left: -50px;
   }
-
-  // //     .example-app-name{
-  // //       margin-right: -72px;
-  // //     }
   .search-container {
     margin-left: 82px;
     width: 35%;
@@ -313,20 +305,6 @@ h1.example-app-name {
     margin-left: -73px;
   }
 
-  // .set {
-  //   margin-left: -21px;
-  // }
-
-  // .apps {
-  //   margin-left: -23px;
-  //   margin-right: 3px;
-
-  // }
-
-  // .menu-btn {
-  //   margin-right: -7px;
-  //   margin-left: -1px;
-  // }
   .refresh {
     margin: 0px;
   }

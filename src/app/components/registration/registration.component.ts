@@ -46,8 +46,6 @@ export class RegistrationComponent implements OnInit {
       }
       )
     }
-
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
   }
 }
 function MustMatch(password: string, confirmPassword: string) {

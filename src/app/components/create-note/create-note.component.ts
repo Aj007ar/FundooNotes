@@ -29,6 +29,7 @@ export class CreateNoteComponent implements OnInit {
 
   Show() {
     this.isShow = true;
+    
   }
   Close() {
     this.isShow = false;
@@ -47,10 +48,12 @@ export class CreateNoteComponent implements OnInit {
         this.color = ""; 
 
       })
+    
       this.snackbar.open('Note Created successfully', '', {
         duration: 3000,
         verticalPosition: 'bottom'
       })
+
     }
   }
 

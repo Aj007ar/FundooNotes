@@ -1,4 +1,4 @@
-<div class="header-container">
+<div class="header-container" *ngIf="!error">
     <div class="logo">
         <ul>
             <li class="f">F</li>
@@ -53,3 +53,4 @@
         </div>
     </form>
 </div>
+<div class="error" *ngIf="error">{{error}}</div>

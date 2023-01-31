@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/DataServices/data.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  errormessage:any
   mobileQuery: MediaQueryList;
   grid = false;
   formatGridList = false;

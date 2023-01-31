@@ -14,6 +14,7 @@ export class SigninComponent implements OnInit {
   submitted = false;
   users = '1'
   hide = true;
+  error:any;
   constructor(private formBuilder: FormBuilder, private user: UserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -44,6 +45,9 @@ export class SigninComponent implements OnInit {
         localStorage.setItem("lname", response.lastName);
         localStorage.setItem("email", response.email);
         this.router.navigateByUrl("/home/notes");
+      },
+      (error:any) => {
+        this.error = error;
       }
       )
     }

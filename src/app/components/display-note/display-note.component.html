@@ -1,6 +1,6 @@
 <div class="head" cdkDropList [cdkDropListData]="recieveNoteList" (cdkDropListDropped)="drop($event)">
     <div class="notes" *ngFor="let data of recieveNoteList | filter : Search" [style.background]="data.color" cdkDrag
-        [class.gridToList]="gridlist" (UpdateEvent)="recievedEventFromIcon($event)">
+        [class.gridToList]="gridlist" (UpdateEvent)="recievedEventFromIcon($event)" >
         <div class="title">
             <p (click)="openDialog(data)">{{data.title | uppercase}}</p>
         </div>

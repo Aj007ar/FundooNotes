@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { GetAllNotesComponent } from './get-all-notes.component';
 
@@ -8,7 +10,8 @@ describe('GetAllNotesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetAllNotesComponent ]
+      declarations: [ GetAllNotesComponent ],
+      imports: [HttpClientModule,AppRoutingModule]
     })
     .compileComponents();
 

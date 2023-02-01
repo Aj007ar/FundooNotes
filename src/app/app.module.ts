@@ -14,7 +14,7 @@ import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu'
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -59,12 +59,18 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
-    MatInputModule,MatSidenavModule,
-    MatToolbarModule,MatListModule,
-    ReactiveFormsModule,MatIconModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatIconModule,
     BrowserAnimationsModule,
-    HttpClientModule,MatTooltipModule,MatSnackBarModule,
-    FormsModule,MatMenuModule,
+    HttpClientModule,
+    MatTooltipModule,
+    MatSnackBarModule,
+    FormsModule,
+    MatMenuModule,
     MatDialogModule,
     DragDropModule
     

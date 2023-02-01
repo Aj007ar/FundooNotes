@@ -1,5 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UpdateNoteComponent } from './update-note.component';
 
 describe('UpdateNoteComponent', () => {
@@ -8,7 +10,8 @@ describe('UpdateNoteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateNoteComponent ]
+      declarations: [ UpdateNoteComponent ],
+      imports: [ HttpClientModule, MatSnackBarModule,MatDialogRef ],
     })
     .compileComponents();
 

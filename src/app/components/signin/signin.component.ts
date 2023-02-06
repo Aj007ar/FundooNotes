@@ -21,9 +21,7 @@ export class SigninComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Z a-z 0-9 +_.-]+@[A-z a-z 0-9 .-]+$")]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      service: ['advance', Validators.required]
     });
-    // localStorage.setItem('SeesionUser',this.users)
   }
 
   get f() { return this.loginForm.controls; }
@@ -36,7 +34,6 @@ export class SigninComponent implements OnInit {
       let payload = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
-        service: "advance"
       }
       this.user.login(payload).subscribe((response: any) => {
         console.log(response);
@@ -51,8 +48,6 @@ export class SigninComponent implements OnInit {
       }
       )
     }
-
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
 
 }

@@ -4,18 +4,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { UserService } from 'src/app/services/userService/user.service';
 
 
 import { SigninComponent } from './signin.component';
 
-describe('SigninComponent', () => {
+fdescribe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
-      imports: [ReactiveFormsModule, HttpClientModule, MatSnackBarModule, AppRoutingModule]
+      imports: [ReactiveFormsModule, HttpClientModule, MatSnackBarModule, AppRoutingModule],
+
     })
     .compileComponents();
 
@@ -27,9 +29,31 @@ describe('SigninComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-//   it(`component should have title 'Fundoo'`,(() => {
-//     const fixture = TestBed.createComponent(SigninComponent);
-//     const app = fixture.debugElement.componentInstance;
-//     expect(app.title).toEqual('Fundoo');
-// }));
+  it('should render Sign In in a h1 tag',(() => {
+    const fixture = TestBed.createComponent(SigninComponent);
+    fixture.detectChanges();
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('h1').textContent).toEqual(' Sign In ');
+  }));
+
+  it('should render Use your Fundoo Account in a span tag',(() => {
+    const fixture = TestBed.createComponent(SigninComponent);
+    fixture.detectChanges();
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('span').textContent).toContain('Use your Fundoo Account');
+  }));
+
+  it('Test a form group Element Count',()=>{
+    const formElement=fixture.debugElement.nativeElement.querySelector('#loginForm');
+    const inputElement=formElement.querySelectorAll('input');
+    expect(inputElement.length).toEqual(2)
+  })
+  it('Check initial form values for login form group', ()=>{
+    const loginFormGroup=component.loginForm;
+    const loginFormValues={
+      email:'',
+      password:''
+    }
+    expect(loginFormGroup.value).toEqual(loginFormValues);
+  })
 });

@@ -14,7 +14,7 @@ import { MatTooltipModule} from '@angular/material/tooltip';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu'
-import { MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -75,7 +75,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     DragDropModule
     
   ],
-  providers: [AuthGuardService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
+  providers: [AuthGuardService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}, {provide:MatDialogRef , useValue:{} },
+
+    { provide: MAT_DIALOG_DATA, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

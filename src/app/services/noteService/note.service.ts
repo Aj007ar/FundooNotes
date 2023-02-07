@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpService/http.service';
 import { HttpHeaders } from '@angular/common/http';
+import { INote } from '../userInterface/user-interface.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class NoteService {
   constructor(private httpService:HttpService) {
     this.token=localStorage.getItem('token')
    }
-  addNote(payload:any)
+  addNote(payload:INote)
   {
     let header = {
       headers: new HttpHeaders({

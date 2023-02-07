@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IloginRes } from 'src/app/services/userInterface/user-interface.service';
 import { UserService } from 'src/app/services/userService/user.service';
 
 

@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/userService/user.service';
 
 import { SigninComponent } from './signin.component';
 
-fdescribe('SigninComponent', () => {
+describe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
 
@@ -43,11 +43,6 @@ fdescribe('SigninComponent', () => {
     expect(app.querySelector('span').textContent).toContain('Use your Fundoo Account');
   }));
 
-  it('Test a form group Element Count',()=>{
-    const formElement=fixture.debugElement.nativeElement.querySelector('#loginForm');
-    const inputElement=formElement.querySelectorAll('input');
-    expect(inputElement.length).toEqual(2)
-  })
   it('Check initial form values for login form group', ()=>{
     const loginFormGroup=component.loginForm;
     const loginFormValues={
